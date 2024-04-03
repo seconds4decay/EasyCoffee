@@ -36,7 +36,7 @@ Backlog Jira:
 
 
 ## Equipe
-  Ciência da Computação:
+Ciência da Computação:
 - [Christian Barnard](cbpj@cesar.school) - cbpj@cesar.school 📩
 - [Felipe Albuquerque](https://github.com/FelipeARFranca) - farf@cesar.school 📩
 - [Felipe Matias](https://github.com/Zibec) - fmfs@cesar.school 📩
@@ -45,7 +45,8 @@ Backlog Jira:
 - [Lucas Ferreira](https://github.com/seconds4decay) - lfta@cesar.school 📩
 - [Luís Gustavo](https://github.com/Luis-Gustavo-Melo) - lgmf@cesar.school 📩
 - [Pedro Sampaio](https://github.com/PedrooSam) - pssa@cesar.schol 📩
-  Design:
+
+Design:
 - [Daniel Barreto] - dsb2@cesar.school 📩
 - [Eduardo França] - eof@cesar.school 📩
 - [Lucca Queiroz] - lqoc@cesar.school 📩
