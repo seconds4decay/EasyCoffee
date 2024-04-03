@@ -37,11 +37,11 @@ Backlog Jira:
 
 ## Equipe
 Ciência da Computação:
-- [Christian Barnard](cbpj@cesar.school) - cbpj@cesar.school 📩
+- [Christian Barnard](https://github.com/cbpj@cesar.school) - cbpj@cesar.school 📩
 - [Felipe Albuquerque](https://github.com/FelipeARFranca) - farf@cesar.school 📩
 - [Felipe Matias](https://github.com/Zibec) - fmfs@cesar.school 📩
 - [Gabriel Landim](https://github.com/Gabrielqlandim) - gqsl@cesar.school 📩
-- [Hugo Beltrão]() - hbc@cesar.school 📩
+- [Hugo Beltrão](https://github.com/hbc@cesar.school) - hbc@cesar.school 📩
 - [Lucas Ferreira](https://github.com/seconds4decay) - lfta@cesar.school 📩
 - [Luís Gustavo](https://github.com/Luis-Gustavo-Melo) - lgmf@cesar.school 📩
 - [Pedro Sampaio](https://github.com/PedrooSam) - pssa@cesar.schol 📩
