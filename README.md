@@ -46,10 +46,10 @@ Backlog Jira:
 - [Luís Gustavo](https://github.com/Luis-Gustavo-Melo) - lgmf@cesar.school 📩
 - [Pedro Sampaio](https://github.com/PedrooSam) - pssa@cesar.schol 📩
   Design:
-- [Daniel Barreto](dsb2@cesar.school) - dsb2@cesar.school 📩
-- [Eduardo França](eof@cesar.school) - eof@cesar.school 📩
-- [Lucca Queiroz](lqoc@cesar.school) - lqoc@cesar.school 📩
-- [Luiz Lins](lhnsl@cesar.school) - lhnsl@cesar.school 📩
+- [Daniel Barreto] - dsb2@cesar.school 📩
+- [Eduardo França] - eof@cesar.school 📩
+- [Lucca Queiroz] - lqoc@cesar.school 📩
+- [Luiz Lins] - lhnsl@cesar.school 📩
 
 ## Contribuintes 👨‍👩‍👧‍👦
 <a href="https://github.com/Gabrielqlandim/fds-projeto/graphs/contributors">
