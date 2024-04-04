@@ -3,9 +3,9 @@
 
 
 ![GitHub repo size](https://github.com/seconds4decay/Projeto-X)
-![GitHub language count](https://img.shields.io/github/languages/count/Gabrielqlandim/StudySchool-Projeto?style=flat&logo=python)
-![Commits](https://img.shields.io/github/commit-activity/t/Gabrielqlandim/StudySchool-Projeto?style=flat&logo=github)
-![GitHub License](https://img.shields.io/github/license/Gabrielqlandim/StudySchool-Projeto)
+![GitHub language count](https://img.shields.io/github/languages/count/seconds4decay/Projeto-X?style=flat&logo=python)
+![Commits](https://img.shields.io/github/commit-activity/t/seconds4decay/Projeto-X?style=flat&logo=github)
+![GitHub License](https://img.shields.io/github/license/seconds4decay/Projeto-X)
 
 ## Introdução
 
