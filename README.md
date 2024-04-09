@@ -1,8 +1,4 @@
-![logo]()
-
-
-
-![GitHub repo size](https://github.com/seconds4decay/Projeto-X)
+![GitHub repo size](https://img.shields.io/github/repo-size/seconds4decay/Projeto-X)
 ![GitHub language count](https://img.shields.io/github/languages/count/seconds4decay/Projeto-X?style=flat&logo=python)
 ![Commits](https://img.shields.io/github/commit-activity/t/seconds4decay/Projeto-X?style=flat&logo=github)
 ![GitHub License](https://img.shields.io/github/license/seconds4decay/Projeto-X)
@@ -28,11 +24,7 @@
 
 Quadro Jira:
 
-![image]()
-
 Backlog Jira: 
-
-![image]()
 
 
 ## Equipe
