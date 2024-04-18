@@ -1,30 +1,29 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/seconds4decay/Projeto-X)
-![GitHub language count](https://img.shields.io/github/languages/count/seconds4decay/Projeto-X?style=flat&logo=python)
-![Commits](https://img.shields.io/github/commit-activity/t/seconds4decay/Projeto-X?style=flat&logo=github)
-![GitHub License](https://img.shields.io/github/license/seconds4decay/Projeto-X)
+![GitHub repo size](https://img.shields.io/github/repo-size/seconds4decay/EasyCoffee)
+![GitHub language count](https://img.shields.io/github/languages/count/seconds4decay/EasyCoffee?style=flat&logo=python)
+![Commits](https://img.shields.io/github/commit-activity/t/seconds4decay/EasyCoffee?style=flat&logo=github)
+![GitHub License](https://img.shields.io/github/license/seconds4decay/EasyCoffee)
 
 ## Introdução
-
+EasyCoffee é um website realizado utilizando o framework Django com o objetivo de expandir a cultura do café na região metropolitana do recife. Ele inclui um catálogo com cafés diversos, modos de preparo, grãos, glossarios, entre outras opções de aprender mais sobre a cultura do café.
 
 ## Tecnologias Utilizadas
 - Linguagens de Programação: Python, JavaScript.
 - Linguagens de Marcação: HTML & CSS 
 - Banco de Dados: SQLite3
 - Framework de Desenvolvimento: Django
+- Deployment: Microsoft Azure
 - Frontend: A interface do usuário é desenvolvida utilizando HTML, CSS com Bootstrap e JavaScript.
 - Organização: Utilizamos a plataforma Jira para organizar o projeto e azure para deixar o site ativo.
 
 ## Links Importantes
 
 ### SR 01:
-
+- Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
+- Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
+- Protótipo Lo-Fi:
+- Storyboard:
 
 ### SR 02:
-
-
-Quadro Jira:
-
-Backlog Jira: 
 
 
 ## Equipe
