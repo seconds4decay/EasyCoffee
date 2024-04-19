@@ -1,0 +1,55 @@
+{% include "pages\header.html" %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Café</title>
+    <style>
+        .cafe {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Informações do Café</h1>
+    <div id="cafeContainer"></div>
+
+    <h2>Adicionar Café</h2>
+    <input type="text" id="cafeInput" placeholder="Digite o nome do café">
+    <input type="text" id="infoInput" placeholder="Digite as informações do café">
+    <button onclick="adicionarCafe()">Adicionar Café</button>
+
+    <script>
+        let cafes = [];
+
+        function adicionarCafe() {
+            const cafeInput = document.getElementById('cafeInput');
+            const infoInput = document.getElementById('infoInput');
+            const cafe = {nome: cafeInput.value, info: infoInput.value};
+            cafes.push(cafe);
+            atualizarCafes();
+            cafeInput.value = '';
+            infoInput.value = '';
+        }
+
+        function removerCafe(index) {
+            cafes.splice(index, 1);
+            atualizarCafes();
+        }
+
+        function atualizarCafes() {
+            const cafeContainer = document.getElementById('cafeContainer');
+            cafeContainer.innerHTML = '';
+            cafes.forEach((cafe, index) => {
+                cafeContainer.innerHTML += `
+                    <div class="cafe">
+                        <h3>${cafe.nome}</h3>
+                        <p>${cafe.info}</p>
+                        <button onclick="removerCafe(${index})">Remover Café</button>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
