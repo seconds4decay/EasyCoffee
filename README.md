@@ -21,7 +21,12 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 - Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
 - Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
 - Protótipo Lo-Fi:
-- Storyboard:
+- Storyboard do jira: (https://zibec.atlassian.net/jira/software/projects/EC/boards/4)
+![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/45689dbc-84a8-4776-b316-5776e6944f34)
+
+- backlog do storyboard: (https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
+  ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/f66e41dc-737c-4b56-b8fa-d5dc24275459)
+
 
 ### SR 02:
 
