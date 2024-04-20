@@ -36,3 +36,19 @@ body {
     background-color: #45a049;
 }
 
+.tittle {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.tittle h1 {
+    margin: 0;
+    color: white;
+}
+
+.glossary {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
