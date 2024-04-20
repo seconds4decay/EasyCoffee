@@ -19,5 +19,5 @@ from app import views
 
 urlpatterns = [
     path('', views.home),
-    path('glossario', views.glossario),
+    path('glossario', views.glossario, name = "glossario"),
 ]
