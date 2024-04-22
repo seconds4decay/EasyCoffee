@@ -27,15 +27,18 @@ def adicionarcafe(request):
     
 
 def glossario(request):
+    palavras = Palavra.objects.all()
     if request.method == 'GET':
-        return  render(request, 'pages/glossario.html')
+        return  render(request, 'pages/glossario.html', {'palavras':palavras})
     if request.method == 'POST':
         if 'adicionar' in request.POST:
                 si = request.POST.get('sig')
                 pa = request.POST.get('palavra2')
                 pa2 = Palavra(palavra = pa, significado = si)
                 pa2.save()
-                return  render(request, 'pages/glossario.html')
+
+                
+                return  render(request, 'pages/glossario.html', {'palavras':palavras})
 
 def palavra(request):
    
