@@ -10,45 +10,86 @@
 <body>
     {% include "pages\header.html" %}
 
+    <div class="square-main">
+        <h1><a href="{%url 'produtos' %}" class="square square1">Produtos</a></h1>
+        <h1><a href="{%url 'glossario' %}" class="square square2" onclick="glossario()">Glossário</a></h1>
+    </div>
     <div class="wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
         <ul class="carousel">
             <li class="card">
-                <div class="img"><img src="{% static '1.jpg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'landim.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Café preto</h2>
-                <span>Sales Manager</span>
+                <span>Gabriel Landim</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static '2.jpg' %}" alt="img" draggable="false"></div>
-                <h2>Café branco</h2>
-                <span>Web Developer</span>
+                <div class="img"><img src="{% static 'pedro.jpeg' %}" alt="img" draggable="false"></div>
+                <h2>Capuccino</h2>
+                <span>Pedro Sampaio</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static '3.jpg' %}" alt="img" draggable="false"></div>
-                <h2>Café amarelo</h2>
-                <span>Online Teacher</span>
+                <div class="img"><img src="{% static 'gustavo.jpeg' %}" alt="img" draggable="false"></div>
+                <h2>Café expresso</h2>
+                <span>Luís Gustavo</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static '1.jpg' %}" alt="img" draggable="false"></div>
-                <h2>Café azul</h2>
-                <span>Freelancer</span>
+                <div class="img"><img src="{% static 'lucas.jpeg' %}" alt="img" draggable="false"></div>
+                <h2>Mocha</h2>
+                <span>Lucas Ferreira</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static '2.jpg' %}" alt="img" draggable="false"></div>
-                <h2>Café rosa</h2>
-                <span>Bank Manager</span>
+                <div class="img"><img src="{% static 'franca.jpeg' %}" alt="img" draggable="false"></div>
+                <h2>Café Gelado</h2>
+                <span>Felipe França</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'moreno.webp' %}" alt="img" draggable="false"></div>
-                <h2>Café landim</h2>
-                <span>App Designer</span>
+                <div class="img"><img src="{% static 'jessica.jpeg' %}" alt="img" draggable="false"></div>
+                <h2>Café macchiato</h2>
+                <span>Jéssica Almeida</span>
+                <div class="rating">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+
+                </div>
             </li>
         </ul>
         <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
 
 
-    <script src="{% static 'javascript.js' %}"></script>
+    <script src="{% static 'javascript.js' %}">
+
+    </script>
 </body>
 
 </html>

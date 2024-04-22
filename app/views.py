@@ -56,3 +56,6 @@ def palavra(request):
 
         else:
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
+        
+def produtos(request):
+    return render(request, 'pages/produtos.html')

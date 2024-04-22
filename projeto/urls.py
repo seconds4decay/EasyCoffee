@@ -25,5 +25,6 @@ urlpatterns = [
     path('glossario/', views.glossario, name = "glossario"),
     path('palavra', views.palavra, name='palavra'),
     path('admin', views.admin, name="admin"), # Adminstração!!!
+    path('produtos', views.produtos, name="produtos")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
