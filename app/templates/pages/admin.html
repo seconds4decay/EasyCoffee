@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="{% url 'adicionarcafe' %}"> {% csrf_token %}
+        <h2>Adicionar Café</h2>
+        <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
+        <p>Descrição do Café</p>
+        <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput"
+            placeholder="Digite as informações do café"></textarea>
+        <button>Adicionar Café</button>
+    </form>
+
+    <form method="POST" action="{% url 'glossario' %}"> {% csrf_token %}
+        <input type="text" name="palavra2" placeholder="fds">
+        <input type="text" name="sig" placeholder="sig">
+        <button type="submit" name="adicionar">Adicionar</button>
+    </form>
+</body>
+
+</html>

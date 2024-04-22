@@ -29,13 +29,6 @@
           {% endfor %}
         </tbody>
     </table>
-    
-    <form method="POST" action="{% url 'adicionarcafe' %}"> {% csrf_token %}
-    <h2>Adicionar Café</h2>
-    <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
-    <p>Descrição do Café</p>
-    <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput" placeholder="Digite as informações do café"></textarea>
-    <button>Adicionar Café</button>   
-    </form>
+
 </body>
 </html>
