@@ -23,5 +23,6 @@ urlpatterns = [
     path('adicionarcafe', views.adicionarcafe, name="adicionarcafe"),
     path('glossario/', views.glossario, name = "glossario"),
     path('palavra', views.palavra, name='palavra'),
+    path('admin', views.admin, name="admin"), # Adminstração!!!
 
 ]

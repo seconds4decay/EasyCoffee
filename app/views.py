@@ -51,3 +51,6 @@ def palavra(request):
 
         else:
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
+        
+def admin(request):
+    return render(request, 'pages/admin.html')
