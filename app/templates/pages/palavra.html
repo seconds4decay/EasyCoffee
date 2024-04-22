@@ -1,0 +1,16 @@
+<!-- pages/resultado_pesquisa.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Pesquisa</title>
+</head>
+<body>
+    <h1>Resultado da Pesquisa</h1>
+    {% if palavra %}
+        <h2>{{ palavra.palavra }}</h2>
+        <p>{{ palavra.significado }}</p>
+    {% else %}
+        <p>Nenhuma palavra encontrada.</p>
+    {% endif %}
+</body>
+</html>

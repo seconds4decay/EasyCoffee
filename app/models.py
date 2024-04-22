@@ -5,6 +5,6 @@ class Cafe(models.Model):
     nome = models.CharField(max_length=120, null=False)
     descricao = models.CharField(max_length=1000, null=False)
 
-class Glossario(models.Model):
-    palavra = models.CharField(max_length=120, null=False)
-    descricao = models.CharField(max_length=1000, null=False)
+class Palavra(models.Model):
+    palavra = models.CharField(max_length=100, unique=True)
+    significado = models.TextField()

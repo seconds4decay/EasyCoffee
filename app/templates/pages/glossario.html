@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossário de Café</title>
-    <link rel="stylesheet" href="static/glossario.css">
+    <link rel="stylesheet" href="{% static 'glossario.css' %}">
 </head>
 
 <body>
@@ -15,11 +17,22 @@
     </div>
     <div class="container">
 
-
+        <form method="POST" action="{% url 'palavra' %}"> {% csrf_token %}
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Pesquisar...">
-            <button onclick="search()">Pesquisar</button>
-        </div>
+            <input type="text" id="id_palavra" name= "palavra" placeholder="Pesquisar...">
+            <button type="submit" name = "pesquisar">Pesquisar</button>
+        </form>
+        
+            
+        <form method="POST" action="{% url 'glossario' %}"> {% csrf_token %}
+                <input type="text" name= "palavra2" placeholder="fds">
+                <input type="text" name= "sig" placeholder="sig">
+                <button type="submit" name = "adicionar">Adicionar</button>
+                
+
+            </form>
+    
+
         <div class="glossary">
             <div class="term">
                 <div class="word">Café Arábica</div>
@@ -36,9 +49,6 @@
     
     <script src="script.js">
 
-        function search() {
-
-        }
 
     </script>
 </body>
