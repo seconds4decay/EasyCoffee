@@ -22,6 +22,6 @@ urlpatterns = [
     path('home', views.home, name="home"),
     path('glossario/', views.glossario, name = "glossario"),
     path('palavra', views.palavra, name='palavra'),
-    path('admin', views.admin, name='admin'),
+    path('admin', views.admin, name="admin"), # Adminstração!!!
 
 ]
