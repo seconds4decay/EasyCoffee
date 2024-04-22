@@ -53,9 +53,9 @@ body {
     margin-left: 20px;
     line-height: 80px;
     font-size: 3rem;
-
 }
-.tittle a{
+
+.tittle a {
     text-decoration: none;
     color: white;
     font-size: 2rem;
@@ -66,10 +66,23 @@ body {
     right: 10px;
     border-radius: 20px;
     margin-top: 15px;
-    
 }
 
 .glossary {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.term {
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.word {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.definition {
+    font-size: 1rem;
 }
