@@ -7,24 +7,39 @@ def home(request):
     cafes = Cafe.objects.all()
     return render(request, 'pages/home.html', {'cafes':cafes})
 
-def adicionarcafe(request):
+def admin(request):
     cafes = Cafe.objects.all()
+    palavras = Palavra.objects.all()
     if request.method == "GET":
-        return render(request, 'pages/adicionarcafe.html', {'cafes':cafes})
+        return render(request, 'pages/admin.html', {'cafes':cafes, 'palavras': palavras})
     elif request.method == "POST":
-        if 'remover' in request.POST:
-            idcafe = request.POST.get('remover')
+        if 'removercafe' in request.POST:
+            idcafe = request.POST.get('removercafe')
 
             cafe = Cafe.objects.filter(id_cafe=idcafe).first()
             cafe.delete()
-        else:
+
+        elif 'adicionarcafe' in request.POST:
             nomecafe = request.POST.get('cafeInput')
             descricaocafe = request.POST.get('infoInput')
 
             cafe = Cafe(nome=nomecafe, descricao=descricaocafe)
             cafe.save()
-        return render(request, 'pages/adicionarcafe.html', {'cafes':cafes})
-    
+
+        elif 'adicionarpalavra' in request.POST:
+            palavranome = request.POST.get('palavra2')
+            significado = request.POST.get('significado')
+
+            palavra = Palavra(palavra = palavranome, significado = significado)
+            palavra.save()
+
+        elif 'removerpalavra' in request.POST:
+            palavranome = request.POST.get('removerpalavra')
+
+            palavra = Palavra.objects.filter(palavra=palavranome).first()
+            palavra.delete()
+        return render(request, 'pages/admin.html', {'cafes':cafes, 'palavras': palavras})
+            
 
 def glossario(request):
     palavras = Palavra.objects.all()

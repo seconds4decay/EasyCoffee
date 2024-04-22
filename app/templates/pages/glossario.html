@@ -22,13 +22,6 @@
             <input type="text" id="id_palavra" name= "palavra" placeholder="Pesquisar...">
             <button type="submit" name = "pesquisar">Pesquisar</button>
         </form>
-
-            
-        <form method="POST" action="{% url 'glossario' %}"> {% csrf_token %}
-                <input type="text" name= "palavra2" placeholder="fds">
-                <input type="text" name= "sig" placeholder="sig">
-                <button type="submit" name = "adicionar">Adicionar</button>
-        </form>
         
         {% for palavra in palavras %}
         <div class="glossary">

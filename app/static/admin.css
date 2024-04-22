@@ -3,6 +3,7 @@ table {
     border-collapse: collapse;
     margin: auto;
     margin-bottom: 20px;
+    margin-top: 20px
   }
   
   /* Estilo para as células da tabela */

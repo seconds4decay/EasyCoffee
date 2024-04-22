@@ -1,0 +1,70 @@
+{% include "pages\head.html" %}
+{% load static %}
+    <title>Adicionar Café</title>
+    <link href="{% static 'admin.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% include "pages\header.html" %}
+    <h1>Cafés</h1>
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th></th>        
+          </tr>
+        </thead>
+        <tbody>
+          {% for cafe in cafes %}
+              <tr>
+                  <td>{{ cafe.id_cafe }}</td>
+                  <td>{{ cafe.nome }}</td>
+                  <td>{{ cafe.descricao }}</td>
+                  <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
+                  <td><button name="removercafe" value="{{ cafe.id_cafe }}">Remover Cafe</button></td>
+                  </form>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    
+    <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
+    <h2>Adicionar Café</h2>
+    <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
+    <p>Descrição do Café</p>
+    <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput" placeholder="Digite as informações do café"></textarea>
+    <button type="submit" nome="adicionarcafe">Adicionar Café</button>   
+    </form>
+
+    <h1>Palavras do Glossario</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th></th>        
+        </tr>
+      </thead>
+      <tbody>
+        {% for palavra in palavras %}
+            <tr>
+                <td>{{ palavra.palavra }}</td>
+                <td>{{ palavra.significado }}</td>
+                <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
+                <td><button name="removerpalavra" value="{{ palavra.palavra }}">Remover Palavra</button></td>
+                </form>
+            </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+
+  <form method="POST" action="{% url 'glossario' %}"> {% csrf_token %}
+    <h2>Adicionar Palavra</h2>
+    <input type="text" name= "palavra2" placeholder="fds">
+    <input type="text" name= "significado" placeholder="significado">
+    <button type="submit" name = "adicionarpalavra">Adicionar</button>
+  </form>
+</body>
+</html>
