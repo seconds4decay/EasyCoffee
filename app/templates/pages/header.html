@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-
-</head>
-
-<body>
-    <header>
-        <h1>Easy Coffee</h1>
-        <nav>
-            <ul>
-                <li><a href="#">história 1</a></li>
-                <li><a href="{% url 'glossario' %}">Glossário</a></li>
-                <!--opções de navegação-->
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'adicionarcafe' %}">Adicionar Cafe</a></li>
+            <li><a href="{% url 'glossario' %}">Glossário</a></li>
+            <!--opções de navegação-->
+        </ul>
+    </nav>
+</header>

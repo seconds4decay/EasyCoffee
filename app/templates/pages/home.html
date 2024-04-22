@@ -1,6 +1,17 @@
+{% load static %}
+{% include "pages\head.html" %}
+<link href="{% static 'home.css' %}">
+</head>
+
+<body>
 {% include "pages\header.html" %}
 
-    <h1>home</h1>
+    <h1>Home</h1>
+
+    {% for cafe in cafes %}
+        <h2>{{ cafe.nome }}</h2>
+        <p>{{ cafe.descricao }}</p>
+    {% endfor %}    
 
     <footer>
         <p>&copy; 2024 EasyCoffee</p>

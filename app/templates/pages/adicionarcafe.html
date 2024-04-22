@@ -1,0 +1,42 @@
+{% include "pages\head.html" %}
+
+<!DOCTYPE html>
+    <title>Café</title>
+</head>
+<body>
+    {% include "pages\header.html" %}
+    <h1>Informações do Café</h1>
+    <div id="cafeContainer"></div>
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th></th>        
+          </tr>
+        </thead>
+        <tbody>
+          {% for cafe in cafes %}
+              <tr>
+                  <td>{{ cafe.id_cafe }}</td>
+                  <td>{{ cafe.nome }}</td>
+                  <td>{{ cafe.descricao }}</td>
+                  <form method="POST" action="{% url 'adicionarcafe' %}"> {% csrf_token %}
+                  <td><button name="remover" value="{{ cafe.id_cafe }}">Remover</button></td>
+                  </form>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    <h2>Adicionar Café</h2>
+    <form method="POST" action="{% url 'adicionarcafe' %}"> {% csrf_token %}
+    <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
+    <p>Descrição do Café</p>
+    <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput" placeholder="Digite as informações do café"></textarea>
+    <button>Adicionar Café</button>   
+    </form>
+</body>
+</html>
