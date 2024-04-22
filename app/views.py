@@ -45,20 +45,9 @@ def glossario(request):
     palavras = Palavra.objects.all()
     if request.method == 'GET':
         return  render(request, 'pages/glossario.html', {'palavras':palavras})
-    if request.method == 'POST':
-        if 'adicionar' in request.POST:
-                si = request.POST.get('sig')
-                pa = request.POST.get('palavra2')
-                pa2 = Palavra(palavra = pa, significado = si)
-                pa2.save()
-
-                
-                return  render(request, 'pages/glossario.html', {'palavras':palavras})
 
 def palavra(request):
-   
     if request.method == 'POST':
-
         if 'pesquisar' in request.POST:
             palavra_pesquisada = request.POST.get('palavra')
             palavra_encontrada = get_object_or_404(Palavra, palavra__iexact=palavra_pesquisada)
@@ -66,6 +55,3 @@ def palavra(request):
 
         else:
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
-        
-def admin(request):
-    return render(request, 'pages/admin.html')
