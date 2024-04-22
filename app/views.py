@@ -1,6 +1,7 @@
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from .models import Cafe, Palavra
 from django.http import HttpResponse
+from .forms import CafeForm
 
 
 def home(request):
@@ -10,8 +11,9 @@ def home(request):
 def admin(request):
     cafes = Cafe.objects.all()
     palavras = Palavra.objects.all()
+    forms = CafeForm()
     if request.method == "GET":
-        return render(request, 'pages/admin.html', {'cafes':cafes, 'palavras': palavras})
+        return render(request, 'pages/admin.html', {'forms': forms, 'cafes':cafes, 'palavras': palavras})
     elif request.method == "POST":
         if 'removercafe' in request.POST:
             idcafe = request.POST.get('removercafe')
@@ -20,11 +22,9 @@ def admin(request):
             cafe.delete()
 
         elif 'adicionarcafe' in request.POST:
-            nomecafe = request.POST.get('cafeInput')
-            descricaocafe = request.POST.get('infoInput')
-
-            cafe = Cafe(nome=nomecafe, descricao=descricaocafe)
-            cafe.save()
+            form = CafeForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
 
         elif 'adicionarpalavra' in request.POST:
             palavranome = request.POST.get('palavra2')
@@ -38,7 +38,8 @@ def admin(request):
 
             palavra = Palavra.objects.filter(palavra=palavranome).first()
             palavra.delete()
-        return render(request, 'pages/admin.html', {'cafes':cafes, 'palavras': palavras})
+        
+        return render(request, 'pages/admin.html', {'forms': forms, 'cafes':cafes, 'palavras': palavras})
             
 
 def glossario(request):

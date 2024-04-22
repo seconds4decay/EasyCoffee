@@ -13,7 +13,8 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Descrição</th>
-            <th></th>        
+            <th>imagem</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                   <td>{{ cafe.id_cafe }}</td>
                   <td>{{ cafe.nome }}</td>
                   <td>{{ cafe.descricao }}</td>
+                  <td><img src='{{ cafe.foto.url }}' alt="img" ></td>
                   <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
                   <td><button name="removercafe" value="{{ cafe.id_cafe }}">Remover Cafe</button></td>
                   </form>
@@ -30,12 +32,9 @@
         </tbody>
     </table>
     
-    <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
-    <h2>Adicionar Café</h2>
-    <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
-    <p>Descrição do Café</p>
-    <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput" placeholder="Digite as informações do café"></textarea>
-    <button type="submit" nome="adicionarcafe">Adicionar Café</button>   
+    <form method="POST" enctype="multipart/form-data" action="{% url 'admin' %}"> {% csrf_token %}
+      {{ forms.as_p }}
+    <button type="submit" name="adicionarcafe">Adicionar Café</button>   
     </form>
 
     <h1>Palavras do Glossario</h1>
