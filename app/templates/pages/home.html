@@ -1,19 +1,54 @@
 {% load static %}
 {% include "pages\head.html" %}
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link href="{% static 'home.css' %}" rel="stylesheet">
 </head>
 
 <body>
-{% include "pages\header.html" %}
+    {% include "pages\header.html" %}
 
-    <h1>Home</h1>
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel">
+            <li class="card">
+                <div class="img"><img src="{% static '1.jpg' %}" alt="img" draggable="false"></div>
+                <h2>Café preto</h2>
+                <span>Sales Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="{% static '2.jpg' %}" alt="img" draggable="false"></div>
+                <h2>Café branco</h2>
+                <span>Web Developer</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="{% static '3.jpg' %}" alt="img" draggable="false"></div>
+                <h2>Café amarelo</h2>
+                <span>Online Teacher</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="{% static '1.jpg' %}" alt="img" draggable="false"></div>
+                <h2>Café azul</h2>
+                <span>Freelancer</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="{% static '2.jpg' %}" alt="img" draggable="false"></div>
+                <h2>Café rosa</h2>
+                <span>Bank Manager</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="{% static 'moreno.webp' %}" alt="img" draggable="false"></div>
+                <h2>Café landim</h2>
+                <span>App Designer</span>
+            </li>
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
 
-    {% for cafe in cafes %}
-        <h2>{{ cafe.nome }}</h2>
-        <p>{{ cafe.descricao }}</p>
-    {% endfor %}    
-    
-    <script src="script.js"></script>
+
+    <script src="{% static 'javascript.js' %}"></script>
 </body>
 
 </html>
