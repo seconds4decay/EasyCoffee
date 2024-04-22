@@ -1,12 +1,11 @@
 {% include "pages\head.html" %}
-
-<!DOCTYPE html>
-    <title>Café</title>
+{% load static %}
+    <title>Adicionar Café</title>
+    <link href="{% static 'adicionarcafe.css' %}" rel="stylesheet">
 </head>
 <body>
     {% include "pages\header.html" %}
     <h1>Informações do Café</h1>
-    <div id="cafeContainer"></div>
 
     <table>
         <thead>
@@ -29,10 +28,10 @@
               </tr>
           {% endfor %}
         </tbody>
-      </table>
-
-    <h2>Adicionar Café</h2>
+    </table>
+    
     <form method="POST" action="{% url 'adicionarcafe' %}"> {% csrf_token %}
+    <h2>Adicionar Café</h2>
     <p>Nome do Café</p> <input type="text" name="cafeInput" id="cafeInput" placeholder="Digite o nome do café">
     <p>Descrição do Café</p>
     <textarea rows="8" cols="50" type="text" name="infoInput" id="infoInput" placeholder="Digite as informações do café"></textarea>

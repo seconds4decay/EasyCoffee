@@ -1,0 +1,74 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para as células da tabela */
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilo para as células do cabeçalho */
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo de hover para realçar as células quando passa o mouse */
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* Estilo para o formulário */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para os parágrafos de texto */
+  p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilo para as entradas de texto */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que a largura inclua o padding e a borda */
+  }
+  
+  /* Estilo para o botão */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para o botão quando passa o mouse */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilo para o botão quando está desabilitado */
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+h1 {
+    text-align: center;
+}
