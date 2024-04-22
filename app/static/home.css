@@ -143,3 +143,18 @@ a {
     grid-auto-columns: 100%;
   }
 }
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+    color: gold;
+}
