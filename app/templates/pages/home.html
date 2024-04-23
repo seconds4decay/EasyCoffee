@@ -7,7 +7,9 @@
 </head>
 
 <body>
-    {% include "pages\header.html" %}
+    <div class="header">
+        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+    </div>
 
     <div class="square-main">
         <h1><a href="{%url 'produtos' %}" class="square square1">Produtos</a></h1>

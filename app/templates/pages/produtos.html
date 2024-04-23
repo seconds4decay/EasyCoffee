@@ -1,7 +1,14 @@
 {% load static %}
 {% include "pages\head.html" %}
 
+<link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+
+</head>
 <body>
-    {% include "pages\header.html" %}
+    <div class="header">
+        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+    </div>
+
+    produtos
 </body>
 </html>
