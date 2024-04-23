@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Cafe, Palavra
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.urls import reverse
 from .forms import CafeForm
 import os
 
@@ -58,8 +59,12 @@ def palavra(request):
     if request.method == 'POST':
         if 'pesquisar' in request.POST:
             palavra_pesquisada = request.POST.get('palavra')
-            palavra_encontrada = get_object_or_404(Palavra, palavra__iexact=palavra_pesquisada)
-            return render(request, 'pages/palavra.html', {'palavra': palavra_encontrada})
+            try:
+                palavra_encontrada = get_object_or_404(Palavra, palavra__iexact=palavra_pesquisada)
+                return render(request, 'pages/palavra.html', {'palavra': palavra_encontrada})
+            except Http404:
+                # Redirecionamento para a página do glossário após 3 segundos (3000 milissegundos)
+                return HttpResponse('<meta http-equiv="refresh" content="3;url=' + reverse('glossario') + '"><div style="color: red; font-size: 24px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Nenhuma palavra encontrada. Redirecionando de volta ao glossário em 3 segundos...</div>')
         else:
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
         
