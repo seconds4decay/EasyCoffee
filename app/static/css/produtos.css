@@ -10,9 +10,13 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
-    
+    display: flex;
+    height: 60px;
 }
 a {
     text-decoration: none;
     color: white;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px;
 }
