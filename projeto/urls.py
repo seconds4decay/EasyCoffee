@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home),
+    path('home/', views.home, name="home/"),
     path('home', views.home, name="home"),
     path('glossario/', views.glossario, name = "glossario"),
     path('palavra', views.palavra, name='palavra'),

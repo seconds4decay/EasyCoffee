@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Cafe, Palavra
 from django.http import HttpResponse
 from .forms import CafeForm
+import os
 
 
 def home(request):
@@ -17,8 +18,14 @@ def admin(request):
     elif request.method == "POST":
         if 'removercafe' in request.POST:
             idcafe = request.POST.get('removercafe')
-
             cafe = Cafe.objects.filter(id_cafe=idcafe).first()
+            foto = str(cafe.foto)
+
+            atual_path = os.getcwd()
+            target_file = os.path.join(atual_path, 'media/cafes', foto[6::])
+            if os.path.exists(target_file):
+                os.remove(target_file)
+
             cafe.delete()
 
         elif 'adicionarcafe' in request.POST:

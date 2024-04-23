@@ -186,12 +186,12 @@ a {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 .square1 {
-    background-image: url('/static/cafe.webp');
+    background-image: url('/static/fotos/cafe.webp');
     background-size: cover; /* Redimensiona a imagem para cobrir completamente o elemento */
     background-position: center; 
 }
 .square2 {
-    background-image: url('/static/glossario.webp');
+    background-image: url('/static/fotos/glossario.webp');
     background-size: cover; /* Redimensiona a imagem para cobrir completamente o elemento */
     background-position: center; 
 }

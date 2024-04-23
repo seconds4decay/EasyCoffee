@@ -1,10 +1,9 @@
 {% load static %}
 {% include "pages\head.html" %}
-<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-<link href="{% static 'home.css' %}" rel="stylesheet">
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +17,7 @@
         <i id="left" class="fa-solid fa-angle-left"></i>
         <ul class="carousel">
             <li class="card">
-                <div class="img"><img src="{% static 'landim.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/landim.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Café preto</h2>
                 <span>Gabriel Landim</span>
                 <div class="rating">
@@ -30,7 +29,7 @@
                 </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'pedro.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/pedro.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Capuccino</h2>
                 <span>Pedro Sampaio</span>
                 <div class="rating">
@@ -41,7 +40,7 @@
                 </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'gustavo.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/gustavo.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Café expresso</h2>
                 <span>Luís Gustavo</span>
                 <div class="rating">
@@ -53,7 +52,7 @@
                 </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'lucas.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/lucas.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Mocha</h2>
                 <span>Lucas Ferreira</span>
                 <div class="rating">
@@ -61,7 +60,7 @@
                 </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'franca.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/franca.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Café Gelado</h2>
                 <span>Felipe França</span>
                 <div class="rating">
@@ -73,7 +72,7 @@
                 </div>
             </li>
             <li class="card">
-                <div class="img"><img src="{% static 'jessica.jpeg' %}" alt="img" draggable="false"></div>
+                <div class="img"><img src="{% static 'fotos/jessica.jpeg' %}" alt="img" draggable="false"></div>
                 <h2>Café macchiato</h2>
                 <span>Jéssica Almeida</span>
                 <div class="rating">
@@ -87,7 +86,7 @@
     </div>
 
 
-    <script src="{% static 'javascript.js' %}">
+    <script src="{% static 'js/carrosel.js' %}">
 
     </script>
 </body>
