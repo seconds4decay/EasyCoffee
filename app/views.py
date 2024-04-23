@@ -60,7 +60,6 @@ def palavra(request):
             palavra_pesquisada = request.POST.get('palavra')
             palavra_encontrada = get_object_or_404(Palavra, palavra__iexact=palavra_pesquisada)
             return render(request, 'pages/palavra.html', {'palavra': palavra_encontrada})
-
         else:
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
         
