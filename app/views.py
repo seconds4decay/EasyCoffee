@@ -69,4 +69,5 @@ def palavra(request):
             return HttpResponse("Parâmetro 'palavra' não fornecido na solicitação GET.")
         
 def produtos(request):
-    return render(request, 'pages/produtos.html')
+    cafes = Cafe.objects.all()
+    return render(request, 'pages/produtos.html', {'cafes':cafes})

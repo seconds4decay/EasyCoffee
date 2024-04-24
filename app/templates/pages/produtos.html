@@ -40,14 +40,39 @@
                 </div>
                 
             </div>
+            <br>
             <div class="foto">
                 <p id="descricao">Descrição do café</p>
             </div>
-            
-            <button class="recommendations-btn">Nossas Recomendações</button>
         </div>
         <!-- Repita o bloco de produto para cada produto -->
+        {% for cafe in cafes %}
+        <div class="product">
+            <div class="produtosCafe">               
+                <h2 id="nomeCafe">{{ cafe.nome }}</h2>
+                <div class="foto">
+                    <img id="fotoCafe" src="{{ cafe.foto.url }}" heigh="148" width="148" alt="Imagem do café">
+                </div>
+                <div class="caracteristicas">
+                    <div class="caracteristica">
+                        <p>Tamanho <!-- tamanho do café --></p>
+                    </div>
+                    <div class="caracteristica">
+                        <p>Intensidade <!-- tamanho do café --></p>
+                    </div>
+                    <div class="caracteristica">
+                        <p>Aroma <!-- tamanho do café --></p>
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <div class="foto">
+                <p id="descricao">{{ cafe.descricao }}</p>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-
+    <button class="recommendations-btn">Nossas Recomendações</button>
 </body>
 </html>

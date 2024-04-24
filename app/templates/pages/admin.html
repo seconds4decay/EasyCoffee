@@ -5,7 +5,6 @@
     <link href="{% static 'css/admin.css' %}" rel="stylesheet">
 </head>
 <body>
-    {% include "pages\header.html" %}
     <h1>Cafés</h1>
 
     <table>
@@ -14,6 +13,9 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Descrição</th>
+            <th>tamanho</th>
+            <th>intensidade</th>
+            <th>aroma</th>
             <th>imagem</th>
             <th></th>
           </tr>
@@ -24,6 +26,9 @@
                   <td>{{ cafe.id_cafe }}</td>
                   <td>{{ cafe.nome }}</td>
                   <td>{{ cafe.descricao }}</td>
+                  <td>{{ cafe.tamanho }}</td>
+                  <td>{{ cafe.intensidade }}</td>
+                  <td>{{ cafe.aroma }}</td>
                   <td><img src='{{ cafe.foto.url }}' alt="img" ></td>
                   <form method="POST" action="{% url 'admin' %}"> {% csrf_token %}
                   <td><button name="removercafe" value="{{ cafe.id_cafe }}">Remover Cafe</button></td>
