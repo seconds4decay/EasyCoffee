@@ -1,12 +1,52 @@
 {% load static %}
 {% include "pages\head.html" %}
 
+
+
 <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 
 </head>
 <body>
     <div class="header">
-        <h1><a href="{% url 'home' %}">Produtos</a></h1>
+        <h1 id="produtos"><a href="{% url 'home' %}">Produtos</a></h1>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Procurar café...">
+    </div>
+
+    <div class="filter-bar">
+        <!-- Adicione os filtros desejados aqui -->
+    </div>
+
+    <div class="products">
+        <!-- Para cada produto, adicione um bloco de produto aqui -->
+        <div class="product">
+            <div class="produtosCafe">               
+                <h2 id="nomeCafe">Nome do Café</h2>
+                <div class="foto">
+                    <img id="fotoCafe" src="{% static 'img/lupa.png' %}" heigh="148" width="148" alt="Imagem do café">
+                </div>
+                <div class="caracteristicas">
+                    <div class="caracteristica">
+                        <p>Tamanho <!-- tamanho do café --></p>
+                    </div>
+                    <div class="caracteristica">
+                        <p>Intensidade <!-- tamanho do café --></p>
+                    </div>
+                    <div class="caracteristica">
+                        <p>Aroma <!-- tamanho do café --></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="foto">
+                <p id="descricao">Descrição do café</p>
+            </div>
+            
+            <button class="recommendations-btn">Nossas Recomendações</button>
+        </div>
+        <!-- Repita o bloco de produto para cada produto -->
     </div>
 
 </body>
