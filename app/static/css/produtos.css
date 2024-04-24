@@ -16,17 +16,19 @@ body {
 }
 .caracteristicas{
     display: flex;
-    flex-direction: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px; /* Move a div 50px para cima */
+    flex-direction: row;
+    justify-content: space-around;
+    vertical-align: middle;
+    margin-top: 50px;
  
 }
 .caracteristica{
     justify-content: center;
     align-items: center;
-    margin-left: 200px; /* Move a div 50px para cima */
-    margin-right: 200px; /* Move a div 50px para cima */
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
     margin-top: 20px;
     font-size: 23px;
     
