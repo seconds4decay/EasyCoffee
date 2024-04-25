@@ -22,13 +22,14 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 - Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
 - Protótipo Lo-Fi: [Figma](https://www.figma.com/file/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?type=design&node-id=0-1&mode=design&t=FaVdtn98NhqPjA9E-0)
 - Screencast do Protótipo de Baixa Qualidade: [Screen Cast]( https://youtu.be/KXky7-IPcxs )
-- Storyboard do jira: [Storyboard](https://zibec.atlassian.net/jira/software/projects/EC/boards/4)
-- Backlog do Storyboard: [Backlog](https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
+- Sprint 1: [Backlog](https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
+- História de usuário: [Historias](https://docs.google.com/document/u/1/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit)
   
 Storyboard:
-![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/45689dbc-84a8-4776-b316-5776e6944f34)
-Backlog:
+![image](https://media.discordapp.net/attachments/1214173430178390029/1233180313908281436/EasyCoffeeStoryBoardFinal.png?ex=662c282a&is=662ad6aa&hm=0f4a6737d38246de60fc3940c2365c717ae1f5fe4f741788052311c2eba31aba&=&format=webp&quality=lossless&width=976&height=549)
+Sprint 1:
 ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/f66e41dc-737c-4b56-b8fa-d5dc24275459)
+![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/45689dbc-84a8-4776-b316-5776e6944f34)
 
 
 ### SR 02:
