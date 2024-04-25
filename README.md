@@ -21,7 +21,7 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 - Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
 - Protótipo Lo-Fi: [Figma](https://www.figma.com/file/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?type=design&node-id=0-1&mode=design&t=FaVdtn98NhqPjA9E-0)
 - Screencast do Protótipo de Baixa Qualidade: [Screen Cast]( https://youtu.be/KXky7-IPcxs )
-- Jira: [Backlog](https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
+- Jira: [Jira](https://zibec.atlassian.net/jira/software/projects/EC/boards/4)
 - História de usuário: [Historias](https://docs.google.com/document/u/1/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit)
   
 Storyboard:
