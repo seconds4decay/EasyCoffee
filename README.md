@@ -30,6 +30,7 @@ Sprint 1:
 ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/f66e41dc-737c-4b56-b8fa-d5dc24275459)
 ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/45689dbc-84a8-4776-b316-5776e6944f34)
 Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
+Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/53076c42-f25d-4148-8e5c-49183df71cb9)
 
 ### SR 02:
 
