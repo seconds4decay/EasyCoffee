@@ -18,11 +18,10 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 ## Links Importantes
 
 ### SR 01:
-- Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
 - Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
 - Protótipo Lo-Fi: [Figma](https://www.figma.com/file/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?type=design&node-id=0-1&mode=design&t=FaVdtn98NhqPjA9E-0)
 - Screencast do Protótipo de Baixa Qualidade: [Screen Cast]( https://youtu.be/KXky7-IPcxs )
-- Sprint 1: [Backlog](https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
+- Jira: [Backlog](https://zibec.atlassian.net/jira/software/projects/EC/boards/4/backlog)
 - História de usuário: [Historias](https://docs.google.com/document/u/1/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit)
   
 Storyboard:
@@ -30,7 +29,7 @@ Storyboard:
 Sprint 1:
 ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/f66e41dc-737c-4b56-b8fa-d5dc24275459)
 ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419701/45689dbc-84a8-4776-b316-5776e6944f34)
-
+Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
 
 ### SR 02:
 
