@@ -23,9 +23,13 @@ urlpatterns = [
     path('', views.home),
     path('home/', views.home, name="home/"),
     path('home', views.home, name="home"),
-    path('glossario/', views.glossario, name = "glossario"),
+    path('glossario/', views.glossario, name = "glossario/"),
+    path('glossario', views.glossario, name = "glossario"),
+    path('palavra/', views.palavra, name='palavra/'),
     path('palavra', views.palavra, name='palavra'),
+    path('admin/', views.admin, name="admin/"),
     path('admin', views.admin, name="admin"), # Adminstração!!!
-    path('produtos', views.produtos, name="produtos")
+    path('produtos/', views.produtos, name="produtos/"),
+    path('produtos', views.produtos, name="produtos"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
