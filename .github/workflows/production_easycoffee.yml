@@ -36,9 +36,8 @@ jobs:
           rm .env
           cd ..
         
-      - name: Pre-Deploy
+      - name: Deploy
         run: |
-          python manage.py makemigrations
           python manage.py migrate
         
       - name: Zip artifact for deployment
