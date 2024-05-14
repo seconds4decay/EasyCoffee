@@ -80,6 +80,6 @@ jobs:
         with:
           app-name: 'EasyCoffee'
           slot-name: 'Production'
-          post_deployment_script: |
-            python post_deploy.py
+          startup-command: |
+            sh startup.sh
           
