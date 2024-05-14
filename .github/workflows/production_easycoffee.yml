@@ -36,8 +36,11 @@ jobs:
           rm .env
           cd ..
         
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-
+      - name: Pre-Deploy
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate
+        
       - name: Zip artifact for deployment
         run: |
           zip release.zip ./* -r
@@ -75,12 +78,6 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1A8128A5AD334360A67911FF41946947 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E91B1BED85F74EC99710FCC2AC6F6A50 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A56018FD74414889AF7E3493E3434B51 }}
-
-      - name: Pre-Deploy
-        run: |
-          ./venv/Scripts/activate.bat
-          python manage.py makemigrations
-          python manage.py migrate
         
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
