@@ -80,8 +80,4 @@ jobs:
         with:
           app-name: 'EasyCoffee'
           slot-name: 'Production'
-
-      - name: Verify startup script
-        run: |
-          ls -l startup.sh
             
