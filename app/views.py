@@ -71,3 +71,14 @@ def palavra(request):
 def produtos(request):
     cafes = Cafe.objects.all()
     return render(request, 'pages/produtos.html', {'cafes':cafes})
+
+def buscar_cafe(request):
+    if request.method == 'POST':
+        nome_pesquisado = request.POST.get('nome')
+        try:
+            cafe_encontrado = get_object_or_404(Cafe, nome__iexact=nome_pesquisado)
+            return render(request, 'pages/cafe.html', {'cafe': cafe_encontrado})
+        except Http404:
+            return HttpResponse('<meta http-equiv="refresh" content="3;url=' + reverse('home') + '"><div style="color: red; font-size: 24px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Nenhum café encontrado. Redirecionando de volta à página inicial em 3 segundos...</div>')
+    else:
+        return HttpResponse("Parâmetro 'nome' não fornecido na solicitação POST.")
