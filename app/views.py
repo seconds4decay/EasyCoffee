@@ -70,6 +70,21 @@ def palavra(request):
         
 def produtos(request):
     cafes = Cafe.objects.all()
+    if request.method == 'GET':
+        return render(request, 'pages/produtos.html', {'cafes':cafes})
+    else:
+        if 'tamanho' in request.POST:
+            tamanhos = request.POST.getlist('tamanho')
+            cafes = cafes.filter(tamanho__in=tamanhos)
+
+        if 'intensidade' in request.POST:
+            intensidades = request.POST.getlist('intensidade')
+            cafes = cafes.filter(intensidade__in=intensidades)
+
+        if 'aroma' in request.POST:
+            aromas = request.POST.getlist('aroma')
+            cafes = cafes.filter(aroma__in=aromas)
+
     return render(request, 'pages/produtos.html', {'cafes':cafes})
 
 def buscar_cafe(request):
