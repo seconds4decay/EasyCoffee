@@ -1,0 +1,67 @@
+<!-- cafe.html -->
+{% load static %}
+{% include "pages/head.html" %}
+
+<link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+<link rel="stylesheet" href="{% static 'css/cafe.css' %}">
+
+</head>
+<body>
+    <div class="header">
+        <h1 id="produtos"><a href="{% url 'home' %}">Produtos</a></h1>
+    </div>
+
+    <div class="product">
+        <div class="produtosCafe">               
+            <h2 id="nomeCafe">{{ cafe.nome }}</h2>
+            <div class="foto">
+                <img id="fotoCafe" src="{{ cafe.foto.url }}" heigh="148" width="148" alt="Imagem do café">
+            </div>
+            <div class="caracteristicas">
+                <div class="caracteristica">
+                    <p>Tamanho <!-- tamanho do café --></p>
+                    {% if cafe.tamanho == "1" %}
+                    <img src="{% static 'fotos/tamanho/tamanho1.png'%}" alt="Tamanho">
+                    {% elif cafe.tamanho == "2" %}
+                    <img src="{% static 'fotos/tamanho/tamanho2.png'%}" alt="Tamanho">
+                    {% elif cafe.tamanho == "3" %}
+                    <img src="{% static 'fotos/tamanho/tamanho3.png'%}" alt="Tamanho">
+                    {% endif %}
+                </div>
+                <div class="caracteristica">
+                    <p>Intensidade <!-- intensidade do café --></p>
+                    {% if cafe.intensidade == "1" %}
+                    <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
+                    {% elif cafe.intensidade == "2" %}
+                    <img src="{% static 'fotos/intensidade/intensidade2.png'%}" alt="intensidade">
+                    {% elif cafe.intensidade == "3" %}
+                    <img src="{% static 'fotos/intensidade/intensidade3.png'%}" alt="intensidade">
+                    {% endif %}
+                </div>
+                <div class="caracteristica">
+                    <p>Aroma <!-- aroma do café --></p>
+                    {% if cafe.aroma == "1" %}
+                    <img src="{% static 'fotos/aroma/aroma1.png'%}" alt="aroma">
+                    {% elif cafe.aroma == "2" %}
+                    <img src="{% static 'fotos/aroma/aroma2.png'%}" alt="aroma">
+                    {% elif cafe.aroma == "3" %}
+                    <img src="{% static 'fotos/aroma/aroma3.png'%}" alt="aroma">
+                    {% elif cafe.aroma == "4" %}
+                    <img src="{% static 'fotos/aroma/aroma4.png'%}" alt="aroma">
+                    {% elif cafe.aroma == "5" %}
+                    <img src="{% static 'fotos/aroma/aroma5.png'%}" alt="aroma">
+                    {% elif cafe.aroma == "6" %}
+                    <img src="{% static 'fotos/aroma/aroma6.png'%}" alt="aroma">
+                    {% endif %}
+                </div>
+            </div>
+            
+        </div>
+        <br>
+        <div class="foto">
+            <p id="descricao">{{ cafe.descricao }}</p>
+        </div>
+    </div>
+    <button class="recommendations-btn">Nossas Recomendações</button>
+</body>
+</html>

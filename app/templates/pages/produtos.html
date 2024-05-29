@@ -1,8 +1,6 @@
 {% load static %}
 {% include "pages/head.html" %}
 
-
-
 <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 <title>Produtos</title>
 </head>
@@ -12,14 +10,53 @@
     </div>
 
     <div class="search-bar">
-        <input type="text" id="search" placeholder="Procurar café...">
+        <form method="post" action="{% url 'buscar_cafe' %}">
+            {% csrf_token %}
+            <input type="text" name="nome" id="search" placeholder="Procurar café...">
+            <button type="submit">Pesquisar</button>
+        </form>
     </div>
 
     <div class="filter-bar">
+        <h1>Filtros</h1>
+        <form method="POST" action="{% url 'produtos' %}"> {% csrf_token %}
+            <div class="filter-tamanho">
+                <h2>Tamanho</h2>
+                <input type="checkbox" name="tamanho" id="tamanho1" value="1" hidden>
+                <label for="tamanho1"><img src="{% static 'fotos/tamanho/tamanho1_button.png' %}" alt="Tamanho 1"></label>
+                <input type="checkbox" name="tamanho" id="tamanho2" value="2" hidden>
+                <label for="tamanho2"><img src="{% static 'fotos/tamanho/tamanho2_button.png' %}" alt="Tamanho 2"></label>
+                <input type="checkbox" name="tamanho" id="tamanho3" value="3" hidden>
+                <label for="tamanho3"><img src="{% static 'fotos/tamanho/tamanho3_button.png' %}" alt="Tamanho 3"></label>
+            </div>
+            <div class="filter-intensidade">
+                <h2>Intensidade</h2>
+                <input type="checkbox" name="intensidade" id="intensidade1" value="1" hidden>
+                <label for="intensidade1"><img src="{% static 'fotos/intensidade/intensidade1_button.png' %}" alt="Intensidade 1"></label>
+                <input type="checkbox" name="intensidade" id="intensidade2" value="2" hidden>
+                <label for="intensidade2"><img src="{% static 'fotos/intensidade/intensidade2_button.png' %}" alt="Intensidade 2"></label>
+                <input type="checkbox" name="intensidade" id="intensidade3" value="3" hidden>
+                <label for="intensidade3"><img src="{% static 'fotos/intensidade/intensidade3_button.png' %}" alt="Intensidade 3"></label>
+            </div>
+            <div class="filter-aroma">
+                <h2>Aroma</h2>
+                <input type="checkbox" name="aroma" id="aroma1" value="1" hidden>
+                <label for="aroma1"><img src="{% static 'fotos/aroma/aroma1_button.png' %}" alt="Aroma 1"></label>
+                <input type="checkbox" name="aroma" id="aroma2" value="2" hidden>
+                <label for="aroma2"><img src="{% static 'fotos/aroma/aroma2_button.png' %}" alt="Aroma 2"></label>
+                <input type="checkbox" name="aroma" id="aroma3" value="3" hidden>
+                <label for="aroma3"><img src="{% static 'fotos/aroma/aroma3_button.png' %}" alt="Aroma 3"></label>
+                <br>
+                <input type="checkbox" name="aroma" id="aroma4" value="4" hidden>
+                <label for="aroma4"><img src="{% static 'fotos/aroma/aroma4_button.png' %}" alt="Aroma 4"></label>
+                <input type="checkbox" name="aroma" id="aroma5" value="5" hidden>
+                <label for="aroma5"><img src="{% static 'fotos/aroma/aroma5_button.png' %}" alt="Aroma 5"></label>
+                <input type="checkbox" name="aroma" id="aroma6" value="6" hidden>
+                <label for="aroma6"><img src="{% static 'fotos/aroma/aroma6_button.png' %}" alt="Aroma 6"></label>
+            </div>
+        <input type="submit" name="Filtrar">
+        </form>
     </div>
-
-    <br>
-    <br>
 
     <div class="products">
         <!-- Para cada produto, adicione um bloco de produto aqui -->
@@ -27,13 +64,17 @@
         {% for cafe in cafes %}
         <div class="product">
             <div class="produtosCafe">               
-                <h2 id="nomeCafe">{{ cafe.nome }}</h2>
-                <div class="foto">
-                    <img id="fotoCafe" src="{{ cafe.foto.url }}" heigh="148" width="148" alt="Imagem do café">
+                <h2 class="nomeCafe">{{ cafe.nome }}</h2>
+                <h3 class="descricaoTitle">Descrição</h3>
+                <div class="descricao">
+                    <div class="foto">
+                        <img id="fotoCafe" src="{{ cafe.foto.url }}" alt="Imagem do café">
+                    </div>
+                    <p>{{ cafe.descricao }}</p>
                 </div>
                 <div class="caracteristicas">
                     <div class="caracteristica">
-                        <p>Tamanho <!-- tamanho do café --></p>
+                        <h3>Tamanho <!-- tamanho do café --></h3>
                         {% if cafe.tamanho == "1" %}
                         <img src="{% static 'fotos/tamanho/tamanho1.png'%}" alt="Tamanho">
                         {% elif cafe.tamanho == "2" %}
@@ -43,7 +84,7 @@
                         {% endif %}
                     </div>
                     <div class="caracteristica">
-                        <p>Intensidade <!-- intensidade do café --></p>
+                        <h3>Intensidade <!-- intensidade do café --></h3>
                         {% if cafe.intensidade == "1" %}
                         <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
                         {% elif cafe.intensidade == "2" %}
@@ -53,7 +94,7 @@
                         {% endif %}
                     </div>
                     <div class="caracteristica">
-                        <p>Aroma <!-- aroma do café --></p>
+                        <h3>Aroma <!-- aroma do café --></h3>
                         {% if cafe.aroma == "1" %}
                         <img src="{% static 'fotos/aroma/aroma1.png'%}" alt="aroma">
                         {% elif cafe.aroma == "2" %}
@@ -72,11 +113,7 @@
                 
             </div>
             <br>
-            <div class="foto">
-                <p id="descricao">{{ cafe.descricao }}</p>
-            </div>
         </div>
-        <br><br><br><br><br><br><br><br><br>
         {% endfor %}
     </div>
     <button class="recommendations-btn">Nossas Recomendações</button>

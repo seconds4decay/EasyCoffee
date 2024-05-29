@@ -31,5 +31,6 @@ urlpatterns = [
     path('admin', views.admin, name="admin"), # Adminstração!!!
     path('produtos/', views.produtos, name="produtos/"),
     path('produtos', views.produtos, name="produtos"),
+    path('buscar_cafe/', views.buscar_cafe, name='buscar_cafe'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
