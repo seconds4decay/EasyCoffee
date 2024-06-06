@@ -1,9 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Cafe, Palavra
-from django.http import HttpResponse, Http404
+from django.contrib.auth.models import User
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
 from .forms import CafeForm
 import os
+
+from django.contrib.auth import login as lg
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate
 
 
 def home(request):
@@ -100,3 +106,42 @@ def buscar_cafe(request):
     
 def recomendacao(request):
     return render(request, 'pages/recomendacao.html')
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'pages/login.html', {'check': 0 })
+    elif request.method == 'POST':
+        if 'login' in request.POST:
+            name = request.POST.get('name')
+            senha = request.POST.get('senha')
+
+            user = authenticate(request,username=name,password=senha)
+
+            if user:
+                lg(request, user)
+                return HttpResponseRedirect('/home/')
+            else:
+                print('oi')
+                return render(request, 'pages/login.html',{'check': 1 } ) 
+        elif 'ok' in request.POST:
+                return render(request, 'pages/login.html',{'check':0 } )
+
+def cadastro(request):
+    if request.method == 'GET':
+        return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
+    elif request.method == 'POST':
+        if 'cadastrar' in request.POST:
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            senha = request.POST.get('senha')
+
+            user = User.objects.filter(username=name).first()
+
+            if user:
+                return render(request, 'pages/cadastro.html', {'check': 1, 'message':'Usuário já existente.'})
+            else:
+                user = User.objects.create_user(username=name,email=email,password=senha)
+                user.save()
+                return HttpResponseRedirect('/')
+        elif 'ok' in request.POST:
+            return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
