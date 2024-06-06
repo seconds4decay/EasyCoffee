@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <section>
+        <br><br>
+        <form actiion="{% url 'cadastro/' %}" method="POST">{% csrf_token %}
+            <div>
+                <p>Nome : <input type="text" class="cadastro-input" id="nome" name="name" required></p>
+            </div>
+            <div>
+                <p>Email : <input type="email" class="cadastro-input" id="email" name="email" required></p>
+            </div>
+            <div>
+                <p>Senha : <input type="password" class="cadastro-input" id="senha" name="senha"
+                        onkeydown="verificarEnter(event)" required></p>
+            </div>
+            <p>
+
+                <input type="submit" name="cadastrar" value='cadastrar' id="botao">
+
+            </p>
+
+        </form>
+
+        <a id="login-btn" name="login">Log in</a>
+
+
+    </section>
+</body>

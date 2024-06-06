@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Login</h1>
+    <section>
+        <br><br>
+        <form method="POST">{% csrf_token %}
+            <div>
+                <p>Nome: <input type="text" class="login-input" id="nome" name="name">
+            </div>
+            </p>
+            <div>
+                <p>Senha: <input type="password" class="login-input" id="senha" onkeydown="verificarEnter(event)" name="senha">
+            </div>
+            </p>
+            <p>
+                <input name ="login"type="submit" value="Login" id="botao">
+            </p>
+            <button id="cadastrar-btn">Cadastrar</button>
+        </form>
+    </section>
+</body>
