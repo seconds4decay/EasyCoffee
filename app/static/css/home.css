@@ -1,19 +1,62 @@
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    height: 60px}
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  height: 60px;
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger-menu {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  font-size: 48px;
+  z-index: 1001; 
+}
+
+.nav-menu {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.nav-menu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: #444;
+}
+
+.nav-menu.active {
+  width: 250px; 
+}
+
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 /* Carrossel  */
@@ -40,16 +83,16 @@ a {
   transform: translateY(-50%);
   transition: transform 0.1s linear;
 }
-.wrapper i:active{
+.wrapper i:active {
   transform: translateY(-50%) scale(0.85);
 }
-.wrapper i:first-child{
+.wrapper i:first-child {
   left: -22px;
 }
-.wrapper i:last-child{
+.wrapper i:last-child {
   right: -22px;
 }
-.wrapper .carousel{
+.wrapper .carousel {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3) - 12px);
@@ -91,20 +134,21 @@ a {
 }
 .carousel .card .img {
   height: 148px;
-  width: 148px;
-  border-radius: 50%;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .card .img img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  border: 4px solid #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .carousel .card h2 {
-  font-weight: 500;
-  font-size: 1.56rem;
-  margin: 30px 0 5px;
+  color: #333;
+  font-size: 1.18rem;
+  margin: 15px 0 5px;
 }
 .carousel .card span {
   color: #6A6D78;
@@ -112,65 +156,65 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
-  }
+.wrapper .carousel {
+  grid-auto-columns: calc((100% / 2) - 9px);
+}
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper .carousel {
-    grid-auto-columns: 100%;
-  }
+.wrapper .carousel {
+  grid-auto-columns: 100%;
+}
 }
 .rating {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .star {
-    font-size: 24px;
-    cursor: pointer;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .star:hover,
 .star.active {
-    color: gold;
+  color: gold;
 }
-.square-main{
-    display: flex;
-    align-items: center; 
-    flex-wrap: wrap;
-    justify-content: center;
+.square-main {
+  display: flex;
+  align-items: center; 
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.square{
-    background-color: rgb(90, 90, 90);
-    width: 600px;
-    height: 300px;
-    margin-left: 40px;
-    border-radius: 40px;
-    text-align: center;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    transition: transform 0.3s ease; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    margin-top: 30px;
+.square {
+  background-color: rgb(90, 90, 90);
+  width: 600px;
+  height: 300px;
+  margin-left: 40px;
+  border-radius: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  transition: transform 0.3s ease; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  margin-top: 30px;
 }
 .square:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 .square1 {
-    background-image: url('/static/fotos/cafe.webp');
-    background-size: cover; /* Redimensiona a imagem para cobrir completamente o elemento */
-    background-position: center; 
+  background-image: url('/static/fotos/cafe.webp');
+  background-size: cover; 
+  background-position: center; 
 }
 .square2 {
-    background-image: url('/static/fotos/glossario.webp');
-    background-size: cover; /* Redimensiona a imagem para cobrir completamente o elemento */
-    background-position: center; 
+  background-image: url('/static/fotos/glossario.webp');
+  background-size: cover; 
+  background-position: center; 
 }

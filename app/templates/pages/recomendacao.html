@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendações de Café</title>
+    <link rel="stylesheet" href="{% static 'css/recomendacao.css' %}">
+</head>
+
+<body>
+    <div class="title">
+        <a href="{% url 'home' %}" class="back-home">
+            <div class="arrow-left"></div>
+        </a>
+        <h1>Recomendações de Café</h1>
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'fotos/logo_1.png' %}" height="40px" alt="Logo">
+        </a>
+    </div>
+    <div class="container">
+        <div class="glossary">
+            <div class="term">
+                <div class="word">Café Pilão</div>
+                <div class="definition">
+                    <p><strong>Preço Médio:</strong> R$ 10,00 (500g)</p>
+                    <p><strong>Sabor/Aroma:</strong> Intenso e encorpado</p>
+                    <p><strong>Produzido em:</strong> Minas Gerais</p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="word">Café 3 Corações</div>
+                <div class="definition">
+                    <p><strong>Preço Médio:</strong> R$ 12,00 (500g)</p>
+                    <p><strong>Sabor/Aroma:</strong> Suave e equilibrado</p>
+                    <p><strong>Produzido em:</strong> São Paulo</p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="word">Café Melitta</div>
+                <div class="definition">
+                    <p><strong>Preço Médio:</strong> R$ 15,00 (500g)</p>
+                    <p><strong>Sabor/Aroma:</strong> Aromático e frutado</p>
+                    <p><strong>Produzido em:</strong> Paraná</p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="word">Café Caboclo</div>
+                <div class="definition">
+                    <p><strong>Preço Médio:</strong> R$ 8,00 (500g)</p>
+                    <p><strong>Sabor/Aroma:</strong> Intenso e encorpado</p>
+                    <p><strong>Produzido em:</strong> Bahia</p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="word">Café Damasco</div>
+                <div class="definition">
+                    <p><strong>Preço Médio:</strong> R$ 9,00 (500g)</p>
+                    <p><strong>Sabor/Aroma:</strong> Suave e aveludado</p>
+                    <p><strong>Produzido em:</strong> Espírito Santo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
