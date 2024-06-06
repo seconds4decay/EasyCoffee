@@ -18,6 +18,7 @@ from django.urls import path
 from app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 
 urlpatterns = [
     path('', views.home),
@@ -27,10 +28,13 @@ urlpatterns = [
     path('glossario', views.glossario, name = "glossario"),
     path('palavra/', views.palavra, name='palavra/'),
     path('palavra', views.palavra, name='palavra'),
-    path('admin/', views.admin, name="admin/"),
-    path('admin', views.admin, name="admin"), # Adminstração!!!
+    path('admincafe/', views.admin, name="admin/"),
+    path('admincafe', views.admin, name="admin"), # Adminstração!!!
     path('produtos/', views.produtos, name="produtos/"),
     path('produtos', views.produtos, name="produtos"),
     path('buscar_cafe/', views.buscar_cafe, name='buscar_cafe'),
     path('recomendacao/', views.recomendacao, name='recomendacao'),
+    path('login/', views.login, name='login/'),
+    path('cadastro/', views.cadastro, name='cadastro/'),
+    path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
