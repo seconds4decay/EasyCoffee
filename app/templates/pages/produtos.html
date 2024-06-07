@@ -69,6 +69,10 @@
                     {% csrf_token %}
                     <button name="favoritar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Favoritar</button>
                 </form>
+                <form action="{% url 'favoritos/' %}" method="POST">
+                    {% csrf_token %}
+                    <button name="deletar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Deletar</button>
+                </form>
                 <h3 class="descricaoTitle">Descrição</h3>
                 <div class="descricao">
                     <div class="foto">
