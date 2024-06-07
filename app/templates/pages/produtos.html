@@ -64,7 +64,11 @@
         {% for cafe in cafes %}
         <div class="product">
             <div class="produtosCafe">               
-                <h2 class="nomeCafe">{{ cafe.nome }} <img src="coração vazio.png" alt=""></h2>
+                <h2 class="nomeCafe">{{ cafe.nome }}</h2>
+                <form action="{% url 'produtos/' %}" method="POST">
+                    {% csrf_token %}
+                    <button name="favoritar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Favoritar</button>
+                </form>
                 <h3 class="descricaoTitle">Descrição</h3>
                 <div class="descricao">
                     <div class="foto">

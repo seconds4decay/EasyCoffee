@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Cafe, Palavra
+from .models import Cafe, Palavra, favoritar
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
@@ -13,14 +13,27 @@ from django.contrib.auth import authenticate
 
 
 def home(request):
+    cafes = Cafe.objects.all()
+    user=request.user
+    username=user.username
+
     if request.method == 'GET':
-        cafes = Cafe.objects.all()
-        user=User.objects.all()
-        return render(request, 'pages/home.html', {'cafes':cafes, 'user': user})
+        print("OQUEI")
+        print(user.username)
+        if user.username == "":
+            print("if 1")
+            return render(request, 'pages/home.html', {'cafes':cafes, 'user': username, 'check': 0})
+        elif user:
+            print("if 2")
+            return render(request, 'pages/home.html', {'cafes':cafes, 'user': username, 'check': 1})
+        else:
+            print("if 3")
+            return render(request, 'pages/home.html', {'cafes':cafes, 'user': username, 'check': 0})
+            
     if request.method == 'POST':
         logout(request)
         print("POST")
-        return HttpResponseRedirect('home/')
+        return render(request, 'pages/home.html', {'cafes':cafes, 'user': username, 'check': 0})
 
 
 
@@ -86,7 +99,7 @@ def produtos(request):
     cafes = Cafe.objects.all()
     if request.method == 'GET':
         return render(request, 'pages/produtos.html', {'cafes':cafes})
-    else:
+    elif request.method == "POST":
         if 'tamanho' in request.POST:
             tamanhos = request.POST.getlist('tamanho')
             cafes = cafes.filter(tamanho__in=tamanhos)
@@ -98,8 +111,21 @@ def produtos(request):
         if 'aroma' in request.POST:
             aromas = request.POST.getlist('aroma')
             cafes = cafes.filter(aroma__in=aromas)
+        
+        if 'favoritar' in request.POST:
+            if request.user.is_authenticated:
+                id_cafe = request.POST.get('favoritar')
+                user = request.user
+                print(id_cafe, user)
+                print('teste')
+                favorito = favoritar(user=user, cafe=id_cafe)
+                favorito.save()
+                
 
-    return render(request, 'pages/produtos.html', {'cafes':cafes})
+            else:
+                return render(request, 'pages/login.html')
+
+        return render(request, 'pages/produtos.html', {'cafes':cafes})
 
 def buscar_cafe(request):
     if request.method == 'POST':
@@ -129,8 +155,9 @@ def login(request):
                 lg(request, user)
                 if request.user.is_authenticated:
                     usuario = request.user
+                    username = usuario.username
                     print(usuario)
-                return render(request, 'pages/home.html', {'name': name, 'usuario': usuario})
+                return HttpResponseRedirect('/home/')
             else:
                 print('oi')
                 return render(request, 'pages/login.html',{'check': 1 } ) 
@@ -155,15 +182,20 @@ def cadastro(request):
             else:
                 user = User.objects.create_user(username=name, email=email, password=senha)
                 user.save()
-                return HttpResponseRedirect('login/')
+                return HttpResponseRedirect('/login/')
         elif 'ok' in request.POST:
             return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
 
 def favoritos(request):
     if request.method == "GET":
+        print("GET OK")
         if request.user.is_authenticated:
-            teste="GET"
-            print(teste)
-            return render (request, 'pages/favoritos.html')
+            print("teste")
+            user=request.user
+            favoritos=favoritar.objects.all()
+            print(favoritos)
+            
+            cafes=favoritos.filter(user=user)
+            return render (request, 'pages/favoritos.html', {'cafes': cafes})
         else:
-            return render(request, 'pages/login.html')
+            return HttpResponseRedirect('/login/')
