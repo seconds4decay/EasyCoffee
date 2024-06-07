@@ -98,11 +98,13 @@ def palavra(request):
 def produtos(request):
     cafes = Cafe.objects.all()
     if request.method == 'GET':
+        print(cafes)
         return render(request, 'pages/produtos.html', {'cafes':cafes})
     elif request.method == "POST":
         if 'tamanho' in request.POST:
             tamanhos = request.POST.getlist('tamanho')
             cafes = cafes.filter(tamanho__in=tamanhos)
+
 
         if 'intensidade' in request.POST:
             intensidades = request.POST.getlist('intensidade')
@@ -118,8 +120,10 @@ def produtos(request):
                 user = request.user
                 print(id_cafe, user)
                 print('teste')
-                favorito = favoritar(user=user, cafe=id_cafe)
-                favorito.save()
+                if favoritar.objects.filter(user=user, cafe=id_cafe).first().DoesNotExist() == False:
+                    favorito = favoritar(user=user, cafe=id_cafe)
+                    favorito.save()
+                
                 
 
             else:
@@ -195,7 +199,38 @@ def favoritos(request):
             favoritos=favoritar.objects.all()
             print(favoritos)
             
-            cafes=favoritos.filter(user=user)
-            return render (request, 'pages/favoritos.html', {'cafes': cafes})
+            total_cafes = Cafe.objects.all()
+
+
+            id_cafes=favoritos.filter(user=user)
+
+            cafes_favoritos = []
+
+            for j in range (0, len(id_cafes)):
+                for k in range (0, len(total_cafes)):
+                    if id_cafes[j].cafe == total_cafes[k].id_cafe:
+                        cafes_favoritos.append(total_cafes[k])
+
+            for i in range (0, len(id_cafes)):
+                print(id_cafes[i].cafe)
+            
+            print(cafes_favoritos)
+            
+
+            
+            
+            return render (request, 'pages/favoritos.html', {'cafes': cafes_favoritos})
         else:
             return HttpResponseRedirect('/login/')
+    if request.method == "POST":
+        if 'deletar' in request.POST:
+
+            id_cafe = request.POST.get('deletar')
+            user=request.user
+            favoritos=favoritar.objects.all()
+
+            if favoritos.filter(user=user, cafe=id_cafe).first() != None:
+                id_cafes=favoritos.filter(user=user, cafe=id_cafe).first()
+                id_cafes.delete()
+
+        return HttpResponseRedirect('/favoritos/')
