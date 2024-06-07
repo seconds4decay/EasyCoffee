@@ -13,6 +13,7 @@ body {
   height: 60px;
   position: relative;
   z-index: 1000;
+
 }
 
 .hamburger-menu {
@@ -217,4 +218,10 @@ a {
   background-image: url('/static/fotos/glossario.webp');
   background-size: cover; 
   background-position: center; 
+}
+#perfil{
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  font-size: large;
 }

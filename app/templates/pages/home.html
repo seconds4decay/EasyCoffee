@@ -13,10 +13,19 @@
             <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
         </div>
         <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+        {% if request.user.is_authenticated %}
+        <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+            <button id="perfil">Sair de {{usuario}}</button>
+        </form>
+        {% else %}
+        <form action="{% url 'login/' %}" method="GET">{% csrf_token %}
+            <button id="perfil" >Login</button>
+        </form>
+        {% endif %}
         <div id="nav-menu" class="nav-menu">
             <a href="#">Acompanhamentos</a>
             <a href="{% url 'recomendacao' %}">Recomendações</a>
-            <a href="#">Opção 3</a>
+            <a href="{% url 'favoritos/' %}">Favoritos</a>
         </div>
     </div>
 

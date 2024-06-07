@@ -13,8 +13,16 @@ from django.contrib.auth import authenticate
 
 
 def home(request):
-    cafes = Cafe.objects.all()
-    return render(request, 'pages/home.html', {'cafes':cafes})
+    if request.method == 'GET':
+        cafes = Cafe.objects.all()
+        user=User.objects.all()
+        return render(request, 'pages/home.html', {'cafes':cafes, 'user': user})
+    if request.method == 'POST':
+        logout(request)
+        print("POST")
+        return HttpResponseRedirect('home/')
+
+
 
 def admin(request):
     cafes = Cafe.objects.all()
@@ -119,7 +127,10 @@ def login(request):
 
             if user:
                 lg(request, user)
-                return HttpResponseRedirect('/home/')
+                if request.user.is_authenticated:
+                    usuario = request.user
+                    print(usuario)
+                return render(request, 'pages/home.html', {'name': name, 'usuario': usuario})
             else:
                 print('oi')
                 return render(request, 'pages/login.html',{'check': 1 } ) 
@@ -128,6 +139,8 @@ def login(request):
 
 def cadastro(request):
     if request.method == 'GET':
+        teste="GET"
+        print(teste)
         return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
     elif request.method == 'POST':
         if 'cadastrar' in request.POST:
@@ -140,8 +153,17 @@ def cadastro(request):
             if user:
                 return render(request, 'pages/cadastro.html', {'check': 1, 'message':'Usuário já existente.'})
             else:
-                user = User.objects.create_user(username=name,email=email,password=senha)
+                user = User.objects.create_user(username=name, email=email, password=senha)
                 user.save()
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('login/')
         elif 'ok' in request.POST:
             return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
+
+def favoritos(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            teste="GET"
+            print(teste)
+            return render (request, 'pages/favoritos.html')
+        else:
+            return render(request, 'pages/login.html')

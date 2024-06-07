@@ -23,7 +23,9 @@
 
         </form>
 
-        <a id="login-btn" name="login">Log in</a>
+        <form action="{% url 'login/' %}" method="GET">{% csrf_token %}
+            <button id="cadastrar-btn">login</button>
+        </form>
 
 
     </section>

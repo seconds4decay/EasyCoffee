@@ -37,4 +37,5 @@ urlpatterns = [
     path('login/', views.login, name='login/'),
     path('cadastro/', views.cadastro, name='cadastro/'),
     path('admin/', admin.site.urls),
+    path('favoritos/', views.favoritos, name="favoritos/"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
