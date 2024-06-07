@@ -98,8 +98,24 @@ def palavra(request):
 def produtos(request):
     cafes = Cafe.objects.all()
     if request.method == 'GET':
-        print(cafes)
-        return render(request, 'pages/produtos.html', {'cafes':cafes})
+        user=request.user
+        favoritos=favoritar.objects.all()
+        print(favoritos)
+            
+        total_cafes = Cafe.objects.all()
+
+
+        id_cafes=favoritos.filter(user=user)
+
+        cafes_favoritos = []
+
+        for j in range (0, len(id_cafes)):
+            for k in range (0, len(total_cafes)):
+                if id_cafes[j].cafe == total_cafes[k].id_cafe:
+                    cafes_favoritos.append(total_cafes[k].id_cafe)
+
+        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
+    
     elif request.method == "POST":
         if 'tamanho' in request.POST:
             tamanhos = request.POST.getlist('tamanho')
@@ -120,16 +136,14 @@ def produtos(request):
                 user = request.user
                 print(id_cafe, user)
                 print('teste')
-                if favoritar.objects.filter(user=user, cafe=id_cafe).first().DoesNotExist() == False:
+                if favoritar.objects.filter(user=user, cafe=id_cafe).first() == None:
                     favorito = favoritar(user=user, cafe=id_cafe)
                     favorito.save()
-                
-                
 
             else:
                 return render(request, 'pages/login.html')
 
-        return render(request, 'pages/produtos.html', {'cafes':cafes})
+        return HttpResponseRedirect('/produtos/')
 
 def buscar_cafe(request):
     if request.method == 'POST':
@@ -219,7 +233,7 @@ def favoritos(request):
 
             
             
-            return render (request, 'pages/favoritos.html', {'cafes': cafes_favoritos})
+            return render (request, 'pages/favoritos.html', {'cafes': cafes_favoritos, 'check': 1})
         else:
             return HttpResponseRedirect('/login/')
     if request.method == "POST":

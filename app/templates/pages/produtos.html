@@ -65,14 +65,17 @@
         <div class="product">
             <div class="produtosCafe">               
                 <h2 class="nomeCafe">{{ cafe.nome }}</h2>
-                <form action="{% url 'produtos/' %}" method="POST">
-                    {% csrf_token %}
-                    <button name="favoritar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Favoritar</button>
-                </form>
+                {% if cafe.id_cafe in favoritos %}
                 <form action="{% url 'favoritos/' %}" method="POST">
                     {% csrf_token %}
                     <button name="deletar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Deletar</button>
                 </form>
+                {% else %}
+                <form action="{% url 'produtos/' %}" method="POST">
+                    {% csrf_token %}
+                    <button name="favoritar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Favoritar</button>
+                </form>
+                {% endif %}
                 <h3 class="descricaoTitle">Descrição</h3>
                 <div class="descricao">
                     <div class="foto">
