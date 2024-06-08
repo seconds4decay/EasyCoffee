@@ -33,4 +33,6 @@ urlpatterns = [
     path('cadastro', views.cadastro, name='cadastro'),
     path('admin', admin.site.urls),
     path('favoritos', views.favoritos, name="favoritos"),
+    path('acompanhamentos', views.acompanhamentos, name='acompanhamentos'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

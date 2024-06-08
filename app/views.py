@@ -259,3 +259,7 @@ def favoritos(request):
                 id_cafes.delete()
 
         return HttpResponseRedirect('/favoritos')
+    
+
+def acompanhamentos(request):
+    return render(request, 'pages/acompanhamentos.html')
