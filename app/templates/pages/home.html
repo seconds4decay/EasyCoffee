@@ -18,14 +18,14 @@
             <button id="perfil">Sair de {{user}}</button>
         </form>
         {% else %}
-        <form action="{% url 'login/' %}" method="GET">{% csrf_token %}
+        <form action="{% url 'login' %}" method="GET">{% csrf_token %}
             <button id="perfil" >Login</button>
         </form>
         {% endif %}
         <div id="nav-menu" class="nav-menu">
             <a href="#">Acompanhamentos</a>
             <a href="{% url 'recomendacao' %}">Recomendações</a>
-            <a href="{% url 'favoritos/' %}">Favoritos</a>
+            <a href="{% url 'favoritos' %}">Favoritos</a>
         </div>
     </div>
 

@@ -103,8 +103,6 @@ def produtos(request):
         print(favoritos)
             
         total_cafes = Cafe.objects.all()
-
-
         id_cafes=favoritos.filter(user=user)
 
         cafes_favoritos = []
@@ -117,6 +115,19 @@ def produtos(request):
         return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
     
     elif request.method == "POST":
+
+        user = request.user
+        favoritos=favoritar.objects.all()
+        print(favoritos)
+        total_cafes = Cafe.objects.all()
+        id_cafes=favoritos.filter(user=user)
+        cafes_favoritos = []
+        for j in range (0, len(id_cafes)):
+            for k in range (0, len(total_cafes)):
+                if id_cafes[j].cafe == total_cafes[k].id_cafe:
+                    cafes_favoritos.append(total_cafes[k].id_cafe)
+
+
         if 'tamanho' in request.POST:
             tamanhos = request.POST.getlist('tamanho')
             cafes = cafes.filter(tamanho__in=tamanhos)
@@ -141,9 +152,9 @@ def produtos(request):
                     favorito.save()
 
             else:
-                return render(request, 'pages/login.html')
-
-        return HttpResponseRedirect('/produtos/')
+                return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
+            
+        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
 
 def buscar_cafe(request):
     if request.method == 'POST':
@@ -175,7 +186,7 @@ def login(request):
                     usuario = request.user
                     username = usuario.username
                     print(usuario)
-                return HttpResponseRedirect('/home/')
+                return HttpResponseRedirect('/home')
             else:
                 print('oi')
                 return render(request, 'pages/login.html',{'check': 1 } ) 
@@ -200,7 +211,7 @@ def cadastro(request):
             else:
                 user = User.objects.create_user(username=name, email=email, password=senha)
                 user.save()
-                return HttpResponseRedirect('/login/')
+                return HttpResponseRedirect('/login')
         elif 'ok' in request.POST:
             return render(request, 'pages/cadastro.html', {'check': 0, 'message':''})
 
@@ -235,7 +246,7 @@ def favoritos(request):
             
             return render (request, 'pages/favoritos.html', {'cafes': cafes_favoritos, 'check': 1})
         else:
-            return HttpResponseRedirect('/login/')
+            return HttpResponseRedirect('/login')
     if request.method == "POST":
         if 'deletar' in request.POST:
 
@@ -247,4 +258,4 @@ def favoritos(request):
                 id_cafes=favoritos.filter(user=user, cafe=id_cafe).first()
                 id_cafes.delete()
 
-        return HttpResponseRedirect('/favoritos/')
+        return HttpResponseRedirect('/favoritos')

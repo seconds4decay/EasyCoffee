@@ -5,87 +5,105 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link href="{% static 'css/favoritos.css' %}" rel="stylesheet">
 </head>
-
-<div class="header">
-    <div class="hamburger-menu">
-        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-    </div>
-    <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
-    {% if check == 1 %}
-    <form action="{% url 'home' %}" method="POST">{% csrf_token %}
-        <button id="perfil">Sair de {{user}}</button>
-    </form>
-    {% else %}
-    <form action="{% url 'login/' %}" method="GET">{% csrf_token %}
-        <button id="perfil" >Login</button>
-    </form>
-    {% endif %}
-    <div id="nav-menu" class="nav-menu">
-        <a href="#">Acompanhamentos</a>
-        <a href="{% url 'recomendacao' %}">Recomendações</a>
-        <a href="{% url 'favoritos/' %}">Favoritos</a>
-    </div>
-</div>
-
-<div class="products">
-    <br><br><br><br><br><br><br><br><br>
-    {% for cafe in cafes %}
-    <div class="product">
-        <div class="produtosCafe">               
-            <h2 class="nomeCafe">{{ cafe.nome }}</h2>
-            <form action="{% url 'favoritos/' %}" method="POST">
-                {% csrf_token %}
-                <button name="deletar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Deletar</button>
-            </form>
-            <h3 class="descricaoTitle">Descrição</h3>
-            <div class="descricao">
-                <div class="foto">
-                    <img id="fotoCafe" src="{{ cafe.foto.url }}" alt="Imagem do café">
-                </div>
-                <p>{{ cafe.descricao }}</p>
-            </div>
-            <div class="caracteristicas">
-                <div class="caracteristica">
-                    <h3>Tamanho <!-- tamanho do café --></h3>
-                    {% if cafe.tamanho == "1" %}
-                    <img src="{% static 'fotos/tamanho/tamanho1.png'%}" alt="Tamanho">
-                    {% elif cafe.tamanho == "2" %}
-                    <img src="{% static 'fotos/tamanho/tamanho2.png'%}" alt="Tamanho">
-                    {% elif cafe.tamanho == "3" %}
-                    <img src="{% static 'fotos/tamanho/tamanho3.png'%}" alt="Tamanho">
-                    {% endif %}
-                </div>
-                <div class="caracteristica">
-                    <h3>Intensidade <!-- intensidade do café --></h3>
-                    {% if cafe.intensidade == "1" %}
-                    <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
-                    {% elif cafe.intensidade == "2" %}
-                    <img src="{% static 'fotos/intensidade/intensidade2.png'%}" alt="intensidade">
-                    {% elif cafe.intensidade == "3" %}
-                    <img src="{% static 'fotos/intensidade/intensidade3.png'%}" alt="intensidade">
-                    {% endif %}
-                </div>
-                <div class="caracteristica">
-                    <h3>Aroma <!-- aroma do café --></h3>
-                    {% if cafe.aroma == "1" %}
-                    <img src="{% static 'fotos/aroma/aroma1.png'%}" alt="aroma">
-                    {% elif cafe.aroma == "2" %}
-                    <img src="{% static 'fotos/aroma/aroma2.png'%}" alt="aroma">
-                    {% elif cafe.aroma == "3" %}
-                    <img src="{% static 'fotos/aroma/aroma3.png'%}" alt="aroma">
-                    {% elif cafe.aroma == "4" %}
-                    <img src="{% static 'fotos/aroma/aroma4.png'%}" alt="aroma">
-                    {% elif cafe.aroma == "5" %}
-                    <img src="{% static 'fotos/aroma/aroma5.png'%}" alt="aroma">
-                    {% elif cafe.aroma == "6" %}
-                    <img src="{% static 'fotos/aroma/aroma6.png'%}" alt="aroma">
-                    {% endif %}
-                </div>
-            </div>
-            
+<body>
+    <div class="header">
+        <div class="hamburger-menu">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
         </div>
-        <br>
+        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+        {% if check == 1 %}
+        <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+            <button id="perfil">Sair de {{user}}</button>
+        </form>
+        {% else %}
+        <form action="{% url 'login' %}" method="GET">{% csrf_token %}
+            <button id="perfil" >Login</button>
+        </form>
+        {% endif %}
+        <div id="nav-menu" class="nav-menu">
+            <a href="#">Acompanhamentos</a>
+            <a href="{% url 'recomendacao' %}">Recomendações</a>
+            <a href="{% url 'favoritos' %}">Favoritos</a>
+        </div>
     </div>
-    <br><br><br><br><br>
-    {% endfor %}
-</div>
+
+    <div class="products">
+        <br><br><br><br><br><br><br><br><br>
+        {% for cafe in cafes %}
+        <div class="product">
+            <div class="produtosCafe">               
+                <h2 class="nomeCafe">{{ cafe.nome }}</h2>
+                <form action="{% url 'favoritos' %}" method="POST">
+                    {% csrf_token %}
+                    <button name="deletar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Deletar</button>
+                </form>
+                <h3 class="descricaoTitle">Descrição</h3>
+                <div class="descricao">
+                    <div class="foto">
+                        <img id="fotoCafe" src="{{ cafe.foto.url }}" alt="Imagem do café">
+                    </div>
+                    <p>{{ cafe.descricao }}</p>
+                </div>
+                <div class="caracteristicas">
+                    <div class="caracteristica">
+                        <h3>Tamanho <!-- tamanho do café --></h3>
+                        {% if cafe.tamanho == "1" %}
+                        <img src="{% static 'fotos/tamanho/tamanho1.png'%}" alt="Tamanho">
+                        {% elif cafe.tamanho == "2" %}
+                        <img src="{% static 'fotos/tamanho/tamanho2.png'%}" alt="Tamanho">
+                        {% elif cafe.tamanho == "3" %}
+                        <img src="{% static 'fotos/tamanho/tamanho3.png'%}" alt="Tamanho">
+                        {% endif %}
+                    </div>
+                    <div class="caracteristica">
+                        <h3>Intensidade <!-- intensidade do café --></h3>
+                        {% if cafe.intensidade == "1" %}
+                        <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
+                        {% elif cafe.intensidade == "2" %}
+                        <img src="{% static 'fotos/intensidade/intensidade2.png'%}" alt="intensidade">
+                        {% elif cafe.intensidade == "3" %}
+                        <img src="{% static 'fotos/intensidade/intensidade3.png'%}" alt="intensidade">
+                        {% endif %}
+                    </div>
+                    <div class="caracteristica">
+                        <h3>Aroma <!-- aroma do café --></h3>
+                        {% if cafe.aroma == "1" %}
+                        <img src="{% static 'fotos/aroma/aroma1.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "2" %}
+                        <img src="{% static 'fotos/aroma/aroma2.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "3" %}
+                        <img src="{% static 'fotos/aroma/aroma3.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "4" %}
+                        <img src="{% static 'fotos/aroma/aroma4.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "5" %}
+                        <img src="{% static 'fotos/aroma/aroma5.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "6" %}
+                        <img src="{% static 'fotos/aroma/aroma6.png'%}" alt="aroma">
+                        {% endif %}
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+        </div>
+        <br><br><br><br><br>
+        {% endfor %}
+    </div>
+</body>
+
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('nav-menu');
+        var hamburger = document.querySelector('.hamburger-menu i');
+        menu.classList.toggle('active');
+
+        if (menu.classList.contains('active')) {
+            hamburger.style.position = 'fixed';
+            hamburger.style.left = '250px'; 
+        } else {
+            hamburger.style.position = 'absolute';
+            hamburger.style.left = '20px';
+        }
+    }
+</script>

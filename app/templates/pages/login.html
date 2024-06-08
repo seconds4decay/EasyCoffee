@@ -18,7 +18,7 @@
                 <input name ="login"type="submit" value="Login" id="botao">
             </p>
         </form>
-        <form action="{% url 'cadastro/' %}" method="GET">{% csrf_token %}
+        <form action="{% url 'cadastro' %}" method="GET">{% csrf_token %}
             <button id="cadastrar-btn">Cadastrar</button>
         </form>
     </section>
