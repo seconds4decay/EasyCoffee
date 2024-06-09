@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #f9eed7  ;
+  background-color: #f9eed7;
 }
 
 .header {
@@ -184,6 +184,7 @@ a {
 .star.active {
   color: gold;
 }
+
 .square-main {
   display: flex;
   align-items: center; 
@@ -195,13 +196,11 @@ a {
   width: 600px;
   height: 300px;
   margin-left: 40px;
-  border-radius: 40px;
   text-align: center;
   display: flex;
   align-items: center; 
   justify-content: center;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
+  color:  #f9eed7;
   transition: transform 0.3s ease; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -217,9 +216,11 @@ a {
   background-position: center; 
 }
 .square2 {
-  background-image: url('/static/fotos/glossario.webp');
-  background-size: cover; 
-  background-position: center; 
+  height: 150px;
+  width: 400px;
+  background-color: #49230E;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 #perfil{
   position: absolute;
