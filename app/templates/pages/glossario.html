@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossário de Café</title>
     <link rel="stylesheet" href="{% static 'css/glossario.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="tittle">
-        <div class = "icones">
-        <i class="fa-solid fa-house"></i> <!-- Casinha -->
-        <i class="fa-solid fa-user"></i>  <!-- Boneco -->
-    </div>
+    <a href="{% url 'home' %}">
+        <div class="tittle">
+            <div class="icones">
+                <i class="fa-solid fa-house"></i> <!-- Casinha -->
+                <i class="fa-solid fa-user"></i> <!-- Boneco -->
+            </div>
+        </a>
         <h1><a href="{% url 'home' %}">Glossário</a></h1>
         <div class="search-container">
             <form method="POST" action="{% url 'palavra' %}" id="search-form"> {% csrf_token %}
@@ -25,15 +30,14 @@
         <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo.png' %}" height="50px"></a>
     </div>
 
-    <div id = "termos-explicacao">
+    <div id="termos-explicacao">
         <h1>TERMOS E EXPLICAÇÃO</h1>
     </div>
     <div class="container">
         {% for palavra in palavras %}
         <div class="glossary">
             <div class="term">
-                <div class="word">{{ palavra.palavra }}</div>
-                <div class="definition">{{ palavra.significado }}</div>
+                <div class="word">{{ palavra.palavra }}: <span class="definition">{{ palavra.significado }}</span></div>
             </div>
             <!-- Outras palavras -->
         </div>

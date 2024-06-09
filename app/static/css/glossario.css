@@ -26,7 +26,6 @@ body {
     padding: 8px;
     width: 300px;
     border: 3px solid #8f4515;
-    
 }
 
 .tittle {
@@ -72,21 +71,31 @@ body {
 .term {
     border-bottom: 1px solid #ccc;
     padding: 15px;
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    align-items: center;
 }
 
 .word {
-    font-weight: bold;
+    color: #593B1D;
     font-size: 1.2rem;
     margin-bottom: 5px;
+    font-weight: 600;
+    
 }
 
 .definition {
     font-size: 1rem;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 10px;
+    font-weight: 400; /* Regular */
 }
-.icones{
+
+.icones {
     margin-left: 20px;
 }
-.icones i{
+
+.icones i {
     color: #8f4515;
     font-size: 2rem;
     margin-left: 10px;
@@ -95,7 +104,8 @@ body {
 #termos-explicacao {
     width: 100%;
     max-width: 450px;
-    border-radius: 5px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     margin: 0 auto;
     background-color: #8f4515;
     text-align: center;
