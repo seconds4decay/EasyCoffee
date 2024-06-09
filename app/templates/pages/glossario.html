@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
@@ -13,30 +12,28 @@
 <body>
     <div class="tittle">
         <h1><a href="{% url 'home' %}">Glossário</a></h1>
+        <div class="search-container">
+            <form method="POST" action="{% url 'palavra' %}" id="search-form"> {% csrf_token %}
+                <input type="text" id="id_palavra" name="palavra" placeholder="Pesquisar...">
+                <button type="submit" name="pesquisar" style="display: none;"></button>
+            </form>
+        </div>
         <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo_1.png' %}" height="40px"></a>
     </div>
+
     <div class="container">
-
-        <form method="POST" action="{% url 'palavra' %}"> {% csrf_token %}
-        <div class="search-container">
-            <input type="text" id="id_palavra" name= "palavra" placeholder="Pesquisar...">
-            <button type="submit" name = "pesquisar">Pesquisar</button>
-        </form>
-
         {% for palavra in palavras %}
         <div class="glossary">
             <div class="term">
-                <div class="word">{{ palavra.palavra}}</div>
+                <div class="word">{{ palavra.palavra }}</div>
                 <div class="definition">{{ palavra.significado }}</div>
             </div>
             <!-- Outras palavras -->
         </div>
         {% endfor %}
     </div>
-    
-    <script src="script.js">
 
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
