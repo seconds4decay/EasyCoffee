@@ -53,7 +53,7 @@ body {
 
 .tittle .search-container {
     position: absolute;
-    right: 35%;
+    right: 25%;
 }
 
 .tittle .a {
@@ -82,4 +82,27 @@ body {
 
 .definition {
     font-size: 1rem;
+}
+.icones{
+    margin-left: 20px;
+}
+.icones i{
+    color: #8f4515;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+#termos-explicacao {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #8f4515;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#termos-explicacao h1 {
+    color: white;
+    margin: 0;
 }

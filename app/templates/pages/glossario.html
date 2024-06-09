@@ -11,6 +11,10 @@
 
 <body>
     <div class="tittle">
+        <div class = "icones">
+        <i class="fa-solid fa-house"></i> <!-- Casinha -->
+        <i class="fa-solid fa-user"></i>  <!-- Boneco -->
+    </div>
         <h1><a href="{% url 'home' %}">Glossário</a></h1>
         <div class="search-container">
             <form method="POST" action="{% url 'palavra' %}" id="search-form"> {% csrf_token %}
@@ -18,9 +22,12 @@
                 <button type="submit" name="pesquisar" style="display: none;"></button>
             </form>
         </div>
-        <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo_1.png' %}" height="40px"></a>
+        <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo.png' %}" height="50px"></a>
     </div>
 
+    <div id = "termos-explicacao">
+        <h1>TERMOS E EXPLICAÇÃO</h1>
+    </div>
     <div class="container">
         {% for palavra in palavras %}
         <div class="glossary">
@@ -33,7 +40,7 @@
         {% endfor %}
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
