@@ -12,7 +12,7 @@
         <div class="hamburger-menu">
             <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
         </div>
-        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+        <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo.png' %}" height="50px"></a>
         {% if check == 1 %}
         <form action="{% url 'home' %}" method="POST">{% csrf_token %}
             <button id="perfil">Sair de {{user}}</button>
