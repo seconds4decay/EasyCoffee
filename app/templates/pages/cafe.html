@@ -3,6 +3,9 @@
 {% include "pages/head.html" %}
 
 <link rel="stylesheet" href="{% static 'css/cafe.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -18,7 +21,9 @@
 
     <div class="product">
         <div class="produtosCafe">
-            <h2 id="nomeCafe">{{ cafe.nome }}</h2>
+            <div class = "nomeCafe">
+            <h2 id="nomeCafe">{{ cafe.nome }} <i class="fa-solid fa-mug-saucer"></i></h2> 
+            </div>
             <div class="foto">
                 <img id="fotoCafe" src="{{ cafe.foto.url }}" height="148" width="148" alt="Imagem do café">
             </div>

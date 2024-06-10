@@ -152,7 +152,7 @@ a {
   scroll-snap-align: start;
   height: 342px;
   list-style: none;
-  background: #fff;
+  background: #49230E;
   cursor: pointer;
   padding-bottom: 15px;
   flex-direction: column;
@@ -165,19 +165,21 @@ a {
   flex-shrink: 0;
 }
 .card .img img {
-  height: 100%;
-  width: 100%;
+  width: 148px;
+  height: 148px;
   object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 100%;
 }
 .carousel .card h2 {
-  color: #333;
+  font-family: "Work Sans", sans-serif;
+  color: white;
   font-size: 1.18rem;
   margin: 15px 0 5px;
 }
 .carousel .card span {
-  color: #6A6D78;
+  font-family: "Work Sans", sans-serif;
+
+  color: white;
   font-size: 1.31rem;
 }
 
@@ -201,6 +203,7 @@ a {
 .star {
   font-size: 24px;
   cursor: pointer;
+  color: gold;
 }
 
 .star:hover,

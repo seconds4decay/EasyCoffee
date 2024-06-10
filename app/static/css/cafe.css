@@ -88,10 +88,25 @@ body {
 #descricao {
     margin-top: 20px;
     width: 100%;
+    color: #593B1D;
+    font-family: "Work Sans", sans-serif;
+
 }
 
+#nomeCafe{
+    font-family: "Work Sans", sans-serif;
+    color: #f9eed7;
+    font-weight: 600;
+}
 .a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.nomeCafe{
+    background-color: #8f4515;
+    width: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
