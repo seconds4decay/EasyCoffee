@@ -2,24 +2,30 @@
 {% load static %}
 {% include "pages/head.html" %}
 
-<link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 <link rel="stylesheet" href="{% static 'css/cafe.css' %}">
 
 </head>
 <body>
     <div class="header">
-        <h1 id="produtos"><a href="{% url 'home' %}">Produtos</a></h1>
+        <div class="tittle">
+            <a href="{% url 'home' %}" class="icones">
+                <i class="fa-solid fa-house"></i> <!-- Casinha -->
+                <i class="fa-solid fa-user"></i> <!-- Boneco -->
+            </a>
+            <a href="{% url 'home' %}" class="logo"><img src="{% static 'fotos/logo_1.png' %}" height="50px"></a>
+        </div>
     </div>
 
     <div class="product">
-        <div class="produtosCafe">               
+        <div class="produtosCafe">
             <h2 id="nomeCafe">{{ cafe.nome }}</h2>
             <div class="foto">
-                <img id="fotoCafe" src="{{ cafe.foto.url }}" heigh="148" width="148" alt="Imagem do café">
+                <img id="fotoCafe" src="{{ cafe.foto.url }}" height="148" width="148" alt="Imagem do café">
             </div>
+            <p id="descricao">{{ cafe.descricao }}</p>
             <div class="caracteristicas">
                 <div class="caracteristica">
-                    <p>Tamanho <!-- tamanho do café --></p>
+                    <p>Tamanho</p> <!-- tamanho do café -->
                     {% if cafe.tamanho == "1" %}
                     <img src="{% static 'fotos/tamanho/tamanho1.png'%}" alt="Tamanho">
                     {% elif cafe.tamanho == "2" %}
@@ -29,7 +35,7 @@
                     {% endif %}
                 </div>
                 <div class="caracteristica">
-                    <p>Intensidade <!-- intensidade do café --></p>
+                    <p>Intensidade</p> <!-- intensidade do café -->
                     {% if cafe.intensidade == "1" %}
                     <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
                     {% elif cafe.intensidade == "2" %}
@@ -39,7 +45,7 @@
                     {% endif %}
                 </div>
                 <div class="caracteristica">
-                    <p>Aroma <!-- aroma do café --></p>
+                    <p>Aroma</p> <!-- aroma do café -->
                     {% if cafe.aroma == "1" %}
                     <img src="{% static 'fotos/aroma/aroma1.png'%}" alt="aroma">
                     {% elif cafe.aroma == "2" %}
@@ -55,13 +61,10 @@
                     {% endif %}
                 </div>
             </div>
-            
-        </div>
-        <br>
-        <div class="foto">
-            <p id="descricao">{{ cafe.descricao }}</p>
         </div>
     </div>
     <button class="recommendations-btn">Nossas Recomendações</button>
+
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 </html>
