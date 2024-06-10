@@ -5,20 +5,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendações de Café</title>
-    <link rel="stylesheet" href="{% static 'css/recomendacao.css' %}">
+    <title>Glossário de Café</title>
+    <link rel="stylesheet" href="{% static 'css/glossario.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="title">
-        <a href="{% url 'home' %}" class="back-home">
-            <div class="arrow-left"></div>
+    <a href="{% url 'home' %}">
+        <div class="tittle">
+            <div class="icones">
+                <i class="fa-solid fa-house"></i> <!-- Casinha -->
+                <i class="fa-solid fa-user"></i> <!-- Boneco -->
+            </div>
         </a>
-        <h1>Recomendações de Café</h1>
-        <a href="{% url 'home' %}" class="logo">
-            <img src="{% static 'fotos/logo_1.png' %}" height="40px" alt="Logo">
-        </a>
+        <h1><a href="{% url 'home' %}">Recomendações</a></h1>
+        <div class="search-container">
+            <form method="POST" action="{% url 'palavra' %}" id="search-form"> {% csrf_token %}
+                <input type="text" id="id_palavra" name="palavra" placeholder="Pesquisar...">
+                <button type="submit" name="pesquisar" style="display: none;"></button>
+            </form>
+        </div>
+        <a href="{% url 'home' %}" class="a"><img src="{% static 'fotos/logo_1.png' %}" height="50px"></a>
     </div>
+
     <div class="container">
         <div class="glossary">
             <div class="term">
@@ -65,6 +76,7 @@
     </div>
     
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
