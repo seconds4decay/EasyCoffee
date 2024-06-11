@@ -45,6 +45,9 @@ Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/1
 
 Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
 
+Storyboard:
+
+Issue/Bug Tracker:
 ## Equipe
 Ciência da Computação:
 - [Christian Barnard](https://github.com/ChrisDrakon) - cbpj@cesar.school 📩
