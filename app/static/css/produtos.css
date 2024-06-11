@@ -301,6 +301,9 @@ input[type="checkbox"]:checked + label img {
 
 #cafeDescricao {
     font-size: 25px;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 10px;
+    font-weight: 300;
 }
 
 #cafeDescricaofoto {
