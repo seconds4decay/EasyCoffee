@@ -34,9 +34,16 @@ Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/ass
 Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/53076c42-f25d-4148-8e5c-49183df71cb9)
 -------
 ### SR 02:
+- Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
+- Protótipo de Média Fidelidade: [Figma]([https://www.figma.com/file/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?type=design&node-id=0-1&mode=design&t=FaVdtn98NhqPjA9E-0](https://www.figma.com/design/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?node-id=0-1&t=RU20FUtKo1LWnNot-1)
+- Screencast do Protótipo de Média Qualidade:
+- Screencast dos Testes:
+- Screencast do CI/CD:
+- Screencast da Aplicação Web:
+- Relato de Programação em Par SR2:
+- História de Usuário: [Historias](https://docs.google.com/document/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit?usp=sharing&ouid=111365307290119526807&rtpof=true&sd=true)
 
-Diagrama de atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
-
+Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
 
 ## Equipe
 Ciência da Computação:
