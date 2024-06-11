@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
     <div class='navbar'>
         <form action="{% url 'home' %}" method="GET">{% csrf_token %}
             <a href="{% url 'home' %}">
-                <i class="fas fa-home icon-size"></i>
-                <i class="fas fa-user"></i>
+                <i class="fa-solid fa-home icon-size"></i>
+                <i class="fa-solid fa-user"></i>
             </a>
         </form>
         <img src="{% static 'fotos/logo_1.png' %}" height="50px" >
@@ -108,12 +107,12 @@
                             {% if cafe.id_cafe in favoritos %}
                             <form action="{% url 'produtos' %}" method="POST">
                                 {% csrf_token %}
-                                <button id='favoritar-btn' name="deletar" value="{{cafe.id_cafe}}"><i id='favoritado' class="fas fa-solid fa-heart"></i></button>
+                                <button id='favoritar-btn' name="deletar" value="{{cafe.id_cafe}}"><i id='favoritado' class="fa-solid fa-heart"></i></button>
                             </form>
                             {% else %}
                             <form action="{% url 'produtos' %}" method="POST">
                                 {% csrf_token %}
-                                <button id='favoritar-btn'name="favoritar" value="{{cafe.id_cafe}}"><i class="fas fa-solid fa-heart"></i></button>
+                                <button id='favoritar-btn'name="favoritar" value="{{cafe.id_cafe}}"><i class="fa-regular fa-heart"></i></button>
                             </form>
                             {% endif %}
                         </div>
@@ -175,5 +174,6 @@
         <br><br><br><br><br>
         {% endfor %}
     </div>
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 </html>

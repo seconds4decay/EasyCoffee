@@ -150,7 +150,7 @@ def produtos(request):
                     favorito.save()
 
             else:
-                return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 0})
+                return HttpResponseRedirect('/login')
             
         if 'deletar' in request.POST:
             id_cafe = request.POST.get('deletar')
