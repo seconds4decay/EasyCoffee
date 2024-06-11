@@ -97,41 +97,39 @@ def palavra(request):
         
 def produtos(request):
     cafes = Cafe.objects.all()
+
+    def getfavoritos():
+            user = request.user
+            favoritos=favoritar.objects.all()
+            print(favoritos)
+            total_cafes = Cafe.objects.all()
+            id_cafes=favoritos.filter(user=user)
+            cafes_favoritos = []
+
+            for j in range (0, len(id_cafes)):
+                for k in range (0, len(total_cafes)):
+                    if id_cafes[j].cafe == total_cafes[k].id_cafe:
+                        cafes_favoritos.append(total_cafes[k].id_cafe)
+            return cafes_favoritos
+    
+
     if request.method == 'GET':
-        user=request.user
-        favoritos=favoritar.objects.all()
-        print(favoritos)
-            
-        total_cafes = Cafe.objects.all()
-        id_cafes=favoritos.filter(user=user)
-
-        cafes_favoritos = []
-
-        for j in range (0, len(id_cafes)):
-            for k in range (0, len(total_cafes)):
-                if id_cafes[j].cafe == total_cafes[k].id_cafe:
-                    cafes_favoritos.append(total_cafes[k].id_cafe)
+        cafes_favoritos = getfavoritos()
 
         return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
     
     elif request.method == "POST":
-
-        user = request.user
-        favoritos=favoritar.objects.all()
-        print(favoritos)
-        total_cafes = Cafe.objects.all()
-        id_cafes=favoritos.filter(user=user)
-        cafes_favoritos = []
-        for j in range (0, len(id_cafes)):
-            for k in range (0, len(total_cafes)):
-                if id_cafes[j].cafe == total_cafes[k].id_cafe:
-                    cafes_favoritos.append(total_cafes[k].id_cafe)
-
+        if 'openfilter' in request.POST:
+            cafes_favoritos = getfavoritos()
+            return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 1})
+        
+        if 'closefilter' in request.POST:
+            cafes_favoritos = getfavoritos()
+            return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 0})
 
         if 'tamanho' in request.POST:
             tamanhos = request.POST.getlist('tamanho')
             cafes = cafes.filter(tamanho__in=tamanhos)
-
 
         if 'intensidade' in request.POST:
             intensidades = request.POST.getlist('intensidade')
@@ -152,9 +150,19 @@ def produtos(request):
                     favorito.save()
 
             else:
-                return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
+                return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 0})
             
-        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
+        if 'deletar' in request.POST:
+            id_cafe = request.POST.get('deletar')
+            user=request.user
+            favoritos=favoritar.objects.all()
+
+            if favoritos.filter(user=user, cafe=id_cafe).first() != None:
+                id_cafes=favoritos.filter(user=user, cafe=id_cafe).first()
+                id_cafes.delete()
+
+        cafes_favoritos = getfavoritos()
+        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 0})
 
 def buscar_cafe(request):
     if request.method == 'POST':
