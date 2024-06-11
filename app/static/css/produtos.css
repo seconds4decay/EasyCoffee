@@ -65,7 +65,7 @@ a {
 .search-bar {
     position: absolute;
     top: 20px; /* Ajuste conforme necessário */
-    right: 500px; /* Ajuste conforme necessário */;
+    right: 50px; /* Ajuste conforme necessário */;
 }
 
 .search-bar input[type="text"] {
