@@ -24,15 +24,6 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 - Jira: [Jira](https://zibec.atlassian.net/jira/software/projects/EC/boards/4)
 - História de usuário: [Historias](https://docs.google.com/document/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit?usp=sharing&ouid=111365307290119526807&rtpof=true&sd=true)
 -------
-Storyboard: ![image](https://media.discordapp.net/attachments/1214173430178390029/1233180313908281436/EasyCoffeeStoryBoardFinal.png?ex=662c282a&is=662ad6aa&hm=0f4a6737d38246de60fc3940c2365c717ae1f5fe4f741788052311c2eba31aba&=&format=webp&quality=lossless&width=976&height=549)
-
-Sprint 1:![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/dc9fc4db-8fcd-45a7-8089-280b1dc849df)
-![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/eaddc26e-9b1f-4a00-80ef-507cc99e4fb7)
-
-Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/991c0105-b0c3-41a6-8aae-1cd64eefc3b2)
-
-Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142418286/53076c42-f25d-4148-8e5c-49183df71cb9)
--------
 ### SR 02:
 - Site do Projeto: [Projeto X](https://sites.google.com/cesar.school/projetox/)
 - Protótipo de Média Fidelidade: [Figma]([https://www.figma.com/file/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?type=design&node-id=0-1&mode=design&t=FaVdtn98NhqPjA9E-0](https://www.figma.com/design/E3iH2Vvn2FxEkw0LIOXA4f/Projeto-X?node-id=0-1&t=RU20FUtKo1LWnNot-1)
