@@ -40,7 +40,7 @@ Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/1
 - Screencast dos Testes:
 - Screencast do CI/CD:
 - Screencast da Aplicação Web:
-- Relato de Programação em Par SR2:
+- Relato de Programação em Par SR2:[projeto X] (https://docs.google.com/document/d/11GTWpc3FoIUiQ8Npa1_zJJ2M1DfeuXaC/edit?usp=sharing&ouid=102122022796546446471&rtpof=true&sd=true)
 - História de Usuário: [Historias](https://docs.google.com/document/d/1LjMRKJ0u4LFrP5ir3QlZnXp4ITHpc-e9/edit?usp=sharing&ouid=111365307290119526807&rtpof=true&sd=true)
 
 Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
