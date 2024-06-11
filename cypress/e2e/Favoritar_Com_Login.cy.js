@@ -38,7 +38,7 @@ describe('Testes de Favoritar', () => {
 
         cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > .nomeCafe').invoke('text').as('Mocha');
 
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
         cy.visit('/');
         cy.get('.hamburger-menu > .fa-solid').click();
         cy.get('[href="/favoritos"]').click();
@@ -51,7 +51,7 @@ describe('Testes de Favoritar', () => {
     it('tirar café dos favoritos através da página de favoritos', () => {
         cy.visit('/');
         cy.get('.square-main > :nth-child(1) > .square').click();
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
         cy.visit('/');
         cy.get('.hamburger-menu > .fa-solid').click();
         cy.get('[href="/favoritos"]').click();
@@ -61,14 +61,14 @@ describe('Testes de Favoritar', () => {
 
         cy.visit('/');
         cy.get('.square-main > :nth-child(1) > .square').click();
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
     })
 
     it('tirar café dos favoritos através da página de produtos', () => {
         cy.visit('/');
         cy.get('.square-main > :nth-child(1) > .square').click();
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
+        cy.get('#favoritado').click();
         cy.visit('/');
         cy.get('.hamburger-menu > .fa-solid').click();
         cy.get('[href="/favoritos"]').click();
@@ -77,7 +77,7 @@ describe('Testes de Favoritar', () => {
 
         cy.visit('/');
         cy.get('.square-main > :nth-child(1) > .square').click();
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
     })
 
     afterEach(() => {
