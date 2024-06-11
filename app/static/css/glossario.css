@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9eed7;
 }
 
 .container {
@@ -11,51 +12,50 @@ body {
 }
 
 .search-container {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
 }
 
 .search-container input[type=text] {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.search-container button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-container button:hover {
-    background-color: #45a049;
+    padding: 8px;
+    width: 300px;
+    border: 3px solid #8f4515;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .tittle {
-    background-color: #333;
-    text-align: center;
-    padding: 10px 0;
+    background-color: white;
     margin-bottom: 20px;
     width: 100%;
-    height: 80px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
 }
 
-.tittle h1 a{
+.tittle h1 a {
     margin: 0;
-    color: white;
-    text-align: left;
-    margin-left: 20px;
-    line-height: 80px;
+    color: #8f4515;
     font-size: 3rem;
     text-decoration: none;
-    position: absolute; 
-    top: 7px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.tittle .search-container {
+    position: absolute;
+    right: 25%;
 }
 
 .tittle .a {
@@ -63,11 +63,8 @@ body {
     color: white;
     font-size: 2rem;
     padding: 10px 20px;
-    position: absolute; 
-    top: 5px; 
-    right: 10px;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-left: auto;
 }
 
 .glossary {
@@ -77,14 +74,48 @@ body {
 .term {
     border-bottom: 1px solid #ccc;
     padding: 15px;
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    align-items: center;
 }
 
 .word {
-    font-weight: bold;
+    color: #593B1D;
     font-size: 1.2rem;
     margin-bottom: 5px;
+    font-weight: 600;
+    
 }
 
 .definition {
     font-size: 1rem;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 10px;
+    font-weight: 400; /* Regular */
+}
+
+.icones {
+    margin-left: 20px;
+}
+
+.icones i {
+    color: #8f4515;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+#termos-explicacao {
+    width: 100%;
+    max-width: 450px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin: 0 auto;
+    background-color: #8f4515;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#termos-explicacao h1 {
+    color: white;
+    margin: 0;
 }

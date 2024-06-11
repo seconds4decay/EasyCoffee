@@ -1,18 +1,113 @@
-.product{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    width: 80%; /* Ajuste conforme necessário */
-    max-width: 800px; /* Para limitar a largura máxima */
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    background-color: #f9eed7;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.header {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.tittle {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.icones {
+    display: flex;
+    gap: 10px;
+}
+
+.icones i {
+    color: #8f4515;
+    font-size: 2rem;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.produtosCafe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.foto {
+    margin-top: 20px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.caracteristica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+#descricao {
+    margin-top: 20px;
+    width: 100%;
+    color: #593B1D;
+    font-family: "Work Sans", sans-serif;
 
 }
-#descricao {
-    margin-top: 50px; 
+
+#nomeCafe{
+    font-family: "Work Sans", sans-serif;
+    color: #f9eed7;
+    font-weight: 600;
+}
+.a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nomeCafe{
+    background-color: #8f4515;
+    width: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }

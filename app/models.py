@@ -1,5 +1,8 @@
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
+
+
 
 class Cafe(models.Model):
     id_cafe = models.AutoField(primary_key=True)
@@ -14,3 +17,7 @@ class Cafe(models.Model):
 class Palavra(models.Model):
     palavra = models.CharField(max_length=100, unique=True)
     significado = models.TextField()
+
+class favoritar(models.Model):
+    user = models.CharField(max_length=100, null=False)
+    cafe = models.IntegerField(default=0)

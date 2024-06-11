@@ -3,12 +3,21 @@
 <!DOCTYPE html>
 <html>
 <link href="{% static 'css/palavra.css' %}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <head>
     <title>Resultado da Pesquisa</title>
 </head>
 <body>
     <div class="header">
-        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
+        <div class="tittle">
+            <a href="{% url 'home' %}" class="icones">
+                <i class="fa-solid fa-house"></i> <!-- Casinha -->
+                <i class="fa-solid fa-user"></i> <!-- Boneco -->
+            </a>
+            <a href="{% url 'home' %}" class="logo"><img src="{% static 'fotos/logo_1.png' %}" height="50px"></a>
+        </div>
     </div>
     <div class="word-box">
         <h1>Resultado da Pesquisa</h1>
@@ -19,5 +28,6 @@
             <p>Nenhuma palavra encontrada.</p>
         {% endif %}
     </div>
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 </html>

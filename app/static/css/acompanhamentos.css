@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9eed7;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type=text] {
+    padding: 8px;
+    width: 300px;
+    border: 3px solid #8f4515;
+}
+
+.tittle {
+    background-color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tittle h1 a {
+    margin: 0;
+    color: #8f4515;
+    font-size: 3rem;
+    text-decoration: none;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.tittle .search-container {
+    position: absolute;
+    right: 25%;
+}
+
+.tittle .a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: auto;
+}
+
+.glossary {
+    margin-top: 20px;
+}
+
+.term {
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.word {
+    color: #593B1D;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    
+}
+
+.definition {
+    font-size: 1rem;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 10px;
+    font-weight: 400; /* Regular */
+}
+
+.icones {
+    margin-left: 20px;
+}
+
+.icones i {
+    color: #8f4515;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+#termos-explicacao {
+    width: 100%;
+    max-width: 450px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin: 0 auto;
+    background-color: #8f4515;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#termos-explicacao h1 {
+    color: white;
+    margin: 0;
+}

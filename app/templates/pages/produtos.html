@@ -1,77 +1,128 @@
 {% load static %}
-{% include "pages/head.html" %}
-
-<link rel="stylesheet" href="{% static 'css/produtos.css' %}">
-<title>Produtos</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="header">
-        <h1 id="produtos"><a href="{% url 'home' %}">Produtos</a></h1>
+    <div class='navbar'>
+        <form action="{% url 'home' %}" method="GET">{% csrf_token %}
+            <a href="{% url 'home' %}">
+                <i class="fa-solid fa-home icon-size"></i>
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </form>
+        <img src="{% static 'fotos/logo_1.png' %}" height="50px" >
+        <div></div>
     </div>
 
     <div class="search-bar">
         <form method="post" action="{% url 'buscar_cafe' %}">
             {% csrf_token %}
             <input type="text" name="nome" id="search" placeholder="Procurar café...">
-            <button type="submit">Pesquisar</button>
         </form>
     </div>
 
+    {% if check == 0 %}
+
+    <form method="POST" action="{% url 'produtos' %}">
+        {% csrf_token %}
+        <button name='openfilter' id="closed-filter-btn">Filtros</button>
+    </form>
+
+    {% else %}
     <div class="filter-bar">
-        <h1>Filtros</h1>
         <form method="POST" action="{% url 'produtos' %}"> {% csrf_token %}
-            <div class="filter-tamanho">
-                <h2>Tamanho</h2>
-                <input type="checkbox" name="tamanho" id="tamanho1" value="1" hidden>
-                <label for="tamanho1"><img src="{% static 'fotos/tamanho/tamanho1_button.png' %}" alt="Tamanho 1"></label>
-                <input type="checkbox" name="tamanho" id="tamanho2" value="2" hidden>
-                <label for="tamanho2"><img src="{% static 'fotos/tamanho/tamanho2_button.png' %}" alt="Tamanho 2"></label>
-                <input type="checkbox" name="tamanho" id="tamanho3" value="3" hidden>
-                <label for="tamanho3"><img src="{% static 'fotos/tamanho/tamanho3_button.png' %}" alt="Tamanho 3"></label>
+            <div class='filter-line1'>
+                <div class="filter-tamanho">
+                    <h2>Tamanho</h2>
+                    <input type="checkbox" name="tamanho" id="tamanho1" value="1" hidden>
+                    <label for="tamanho1"><img src="{% static 'fotos/tamanho/tamanho1_button.png' %}" alt="Tamanho 1"></label>
+                    <input type="checkbox" name="tamanho" id="tamanho2" value="2" hidden>
+                    <label for="tamanho2"><img src="{% static 'fotos/tamanho/tamanho2_button.png' %}" alt="Tamanho 2"></label>
+                    <input type="checkbox" name="tamanho" id="tamanho3" value="3" hidden>
+                    <label for="tamanho3"><img src="{% static 'fotos/tamanho/tamanho3_button.png' %}" alt="Tamanho 3"></label>
+                </div>
+                <div class="filter-intensidade">
+                    <h2>Intensidade</h2>
+                    <input type="checkbox" name="intensidade" id="intensidade1" value="1" hidden>
+                    <label for="intensidade1"><img src="{% static 'fotos/intensidade/intensidade1_button.png' %}" alt="Intensidade 1"></label>
+                    <input type="checkbox" name="intensidade" id="intensidade2" value="2" hidden>
+                    <label for="intensidade2"><img src="{% static 'fotos/intensidade/intensidade2_button.png' %}" alt="Intensidade 2"></label>
+                    <input type="checkbox" name="intensidade" id="intensidade3" value="3" hidden>
+                    <label for="intensidade3"><img src="{% static 'fotos/intensidade/intensidade3_button.png' %}" alt="Intensidade 3"></label>
+                </div>
             </div>
-            <div class="filter-intensidade">
-                <h2>Intensidade</h2>
-                <input type="checkbox" name="intensidade" id="intensidade1" value="1" hidden>
-                <label for="intensidade1"><img src="{% static 'fotos/intensidade/intensidade1_button.png' %}" alt="Intensidade 1"></label>
-                <input type="checkbox" name="intensidade" id="intensidade2" value="2" hidden>
-                <label for="intensidade2"><img src="{% static 'fotos/intensidade/intensidade2_button.png' %}" alt="Intensidade 2"></label>
-                <input type="checkbox" name="intensidade" id="intensidade3" value="3" hidden>
-                <label for="intensidade3"><img src="{% static 'fotos/intensidade/intensidade3_button.png' %}" alt="Intensidade 3"></label>
+            <div class='filter-line1'>
+                <div class="filter-aroma">
+                    <br>
+                    <h2>Aroma</h2>
+                    <input type="checkbox" name="aroma" id="aroma1" value="1" hidden>
+                    <label for="aroma1"><img src="{% static 'fotos/aroma/aroma1_button.png' %}" alt="Aroma 1"></label>
+                    <input type="checkbox" name="aroma" id="aroma2" value="2" hidden>
+                    <label for="aroma2"><img src="{% static 'fotos/aroma/aroma2_button.png' %}" alt="Aroma 2"></label>
+                    <input type="checkbox" name="aroma" id="aroma3" value="3" hidden>
+                    <label for="aroma3"><img src="{% static 'fotos/aroma/aroma3_button.png' %}" alt="Aroma 3"></label>
+                    <input type="checkbox" name="aroma" id="aroma4" value="4" hidden>
+                    <label for="aroma4"><img src="{% static 'fotos/aroma/aroma4_button.png' %}" alt="Aroma 4"></label>
+                    <br>
+                    
+                    <input type="checkbox" name="aroma" id="aroma5" value="5" hidden>
+                    <label for="aroma5"><img src="{% static 'fotos/aroma/aroma5_button.png' %}" alt="Aroma 5"></label>
+                    <input type="checkbox" name="aroma" id="aroma6" value="6" hidden>
+                    <label for="aroma6"><img src="{% static 'fotos/aroma/aroma6_button.png' %}" alt="Aroma 6"></label>
+                    <input type="checkbox" name="aroma" id="aroma7" value="7" hidden>
+                    <label for="aroma7"><img src="{% static 'fotos/aroma/aroma7_button.png' %}" alt="Aroma 7"></label>
+                    <input type="checkbox" name="aroma" id="aroma8" value="8" hidden>
+                    <label for="aroma8"><img src="{% static 'fotos/aroma/aroma8_button.png' %}" alt="Aroma 8"></label>
+                </div>
+                <div id="filtrar-btn"><input type="submit" name="Filtrar"></div>
             </div>
-            <div class="filter-aroma">
-                <h2>Aroma</h2>
-                <input type="checkbox" name="aroma" id="aroma1" value="1" hidden>
-                <label for="aroma1"><img src="{% static 'fotos/aroma/aroma1_button.png' %}" alt="Aroma 1"></label>
-                <input type="checkbox" name="aroma" id="aroma2" value="2" hidden>
-                <label for="aroma2"><img src="{% static 'fotos/aroma/aroma2_button.png' %}" alt="Aroma 2"></label>
-                <input type="checkbox" name="aroma" id="aroma3" value="3" hidden>
-                <label for="aroma3"><img src="{% static 'fotos/aroma/aroma3_button.png' %}" alt="Aroma 3"></label>
-                <br>
-                <input type="checkbox" name="aroma" id="aroma4" value="4" hidden>
-                <label for="aroma4"><img src="{% static 'fotos/aroma/aroma4_button.png' %}" alt="Aroma 4"></label>
-                <input type="checkbox" name="aroma" id="aroma5" value="5" hidden>
-                <label for="aroma5"><img src="{% static 'fotos/aroma/aroma5_button.png' %}" alt="Aroma 5"></label>
-                <input type="checkbox" name="aroma" id="aroma6" value="6" hidden>
-                <label for="aroma6"><img src="{% static 'fotos/aroma/aroma6_button.png' %}" alt="Aroma 6"></label>
-            </div>
-        <input type="submit" name="Filtrar">
         </form>
-    </div>
+        <form method="POST" action="{% url 'produtos' %}">
+            {% csrf_token %}
+            <button name='closefilter' id="open-filter-btn">Filtros</button>
+        </form>
+    </div> 
+    {% endif %}
 
     <div class="products">
         <!-- Para cada produto, adicione um bloco de produto aqui -->
         <!-- Repita o bloco de produto para cada produto -->
         {% for cafe in cafes %}
         <div class="product">
-            <div class="produtosCafe">               
-                <h2 class="nomeCafe">{{ cafe.nome }}</h2>
-                <h3 class="descricaoTitle">Descrição</h3>
-                <div class="descricao">
-                    <div class="foto">
+            <div class="produtosCafe">      
+                <div class='infoCafe'>
+                    <div class='imageCafe'>
+                        <div class='favorite'>
+                            <h2 class="nomeCafe">{{ cafe.nome }}</h2>
+
+                            {% if cafe.id_cafe in favoritos %}
+                            <form action="{% url 'produtos' %}" method="POST">
+                                {% csrf_token %}
+                                <button id='favoritar-btn' name="deletar" value="{{cafe.id_cafe}}"><i id='favoritado' class="fa-solid fa-heart"></i></button>
+                            </form>
+                            {% else %}
+                            <form action="{% url 'produtos' %}" method="POST">
+                                {% csrf_token %}
+                                <button id='favoritar-btn'name="favoritar" value="{{cafe.id_cafe}}"><i class="fa-regular fa-heart"></i></button>
+                            </form>
+                            {% endif %}
+                        </div>
                         <img id="fotoCafe" src="{{ cafe.foto.url }}" alt="Imagem do café">
                     </div>
-                    <p>{{ cafe.descricao }}</p>
+                    <div class='descricao'>
+                        <p id='cafeDescricao'>{{ cafe.descricao }}</p>
+                        <img id='cafeDescricaofoto'src="{% static 'fotos/recomendacoes.jpg' %}" height='70px'>
+                    </div>
                 </div>
+
                 <div class="caracteristicas">
                     <div class="caracteristica">
                         <h3>Tamanho <!-- tamanho do café --></h3>
@@ -85,6 +136,7 @@
                     </div>
                     <div class="caracteristica">
                         <h3>Intensidade <!-- intensidade do café --></h3>
+                        <br><br>
                         {% if cafe.intensidade == "1" %}
                         <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
                         {% elif cafe.intensidade == "2" %}
@@ -107,6 +159,10 @@
                         <img src="{% static 'fotos/aroma/aroma5.png'%}" alt="aroma">
                         {% elif cafe.aroma == "6" %}
                         <img src="{% static 'fotos/aroma/aroma6.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "7" %}
+                        <img src="{% static 'fotos/aroma/aroma7.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "8" %}
+                        <img src="{% static 'fotos/aroma/aroma8.png'%}" alt="aroma">
                         {% endif %}
                     </div>
                 </div>
@@ -114,8 +170,9 @@
             </div>
             <br>
         </div>
+        <br><br><br><br><br>
         {% endfor %}
     </div>
-    <button class="recommendations-btn">Nossas Recomendações</button>
+    <script src="https://kit.fontawesome.com/7b20608c37.js" crossorigin="anonymous"></script>
 </body>
 </html>

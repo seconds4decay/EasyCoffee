@@ -1,8 +1,9 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9eed7;
 }
 /*botao de recomendação*/
 .recommendations-btn {
@@ -12,15 +13,38 @@ body {
 }
 
 /* HEADER */
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.navbar {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
-    height: 60px;
-    justify-content: center; /* Alinha os itens horizontalmente no centro */
-    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+}
+
+#seta {
+    background-color: transparent; 
+    border: none; 
+    margin-left: 10px;
+}
+
+i {
+    color: #8f4515;
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+#seta:hover {
+    cursor: pointer;
 }
 #produtos{
     display: flex;
@@ -30,10 +54,8 @@ body {
 }
 a {
     text-decoration: none;
-    color: white;
-    font-size: 3rem;
     position: absolute;
-    top: 20px;
+    top: 25%;
 }
 
 /* ///////////////// */
@@ -43,49 +65,126 @@ a {
 .search-bar {
     position: absolute;
     top: 20px; /* Ajuste conforme necessário */
-    right: 100px; /* Ajuste conforme necessário */
+    right: 50px; /* Ajuste conforme necessário */;
 }
 
 .search-bar input[type="text"] {
-    padding-right: 30px; /* Ajuste conforme necessário para acomodar o ícone de pesquisa */
-}
-
-.search-bar .search-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
-    background-color: #ccc;
-    border: none;
-    cursor: pointer;
-}
-
-.search-bar .search-button i {
-    font-size: 18px;
+    padding: 8px;
+    width: 300px;
+    border: 3px solid #8f4515;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
 /* ///////////////// */
 
 /* BARRA DE FILTROS */
 
+#closed-filter-btn {
+    position: relative;
+    left: 76%;
+    font-weight: bolder;
+    border: none;
+    text-align: center;
+    color: #f9eed7;
+    background-color: #8f4515;
+    height: 60px;
+    width: 300px;
+    border-radius: 0px 0px 20px 20px ;
+    font-size:50px;
+    margin-bottom: 0;
+}
+
+#closed-filter-btn:hover {
+    cursor: pointer;
+}
+
+#open-filter-btn {
+    position: relative;
+    bottom: 4px;
+    font-weight: bolder;
+    border: none;
+    text-align: center;
+    color: #f9eed7;
+    background-color: #8f4515;
+    height: 60px;
+    width: 300px;
+    border-radius: 0px 20px 0px 20px ;
+    font-size:50px;
+    margin-bottom: 0;
+}
+
+#open-filter-btn:hover {
+    cursor: pointer;
+}
+
 .filter-bar {
+    color: #f9eed7;
     justify-content: center;
     text-align:center;
     align-items: center;
-    height: 335px;
+    height: 355px;
     border-radius: 20px;
-    width: 60%;
+    width: 32%;
     margin: 10px auto;
-    border: 1px solid black;
-    margin-bottom: 200px;
+    background-color: #593B1D;
+
+    position: fixed;
+    left: 62%;
+    z-index: 100;
+}
+
+.filter-bar form {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-line1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-right: 4px solid #f9eed7;
+}
+
+.filter-line1:last-child {
+    border-right: none; /* Adicione esta linha */
 }
 
 .filter-aroma, 
 .filter-intensidade,
 .filter-tamanho {
-    display: inline-block;
     margin: 0 50px;
 }
+
+#filtrar-btn {
+    width: 150px;
+    border-radius: 20px;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    background-color: #f9eed7;
+    font-size: large;
+}
+
+#filtrar-btn:hover {
+    cursor: pointer;
+}
+
+#filtrar-btn input:hover {
+    cursor: pointer;
+}
+
+#filtrar-btn input {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #593B1D;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
 
 input[type="checkbox"] {
     display: none;
@@ -97,6 +196,7 @@ label {
 
 input[type="checkbox"] + label img {
     opacity: 0.5;
+    
 }
 
 input[type="checkbox"]:checked + label img {
@@ -107,76 +207,147 @@ input[type="checkbox"]:checked + label img {
 
 /* PRODUTOS */
 
-.nomeCafe{
-    text-align: center;
-}
-
-.descricaoTitle {
-    margin-left: 750px;
-}
-
-.caracteristicas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    vertical-align: middle;
-    margin-top: 50px;
- 
-}
-
-.caracteristica{
-    text-align: center;
-    display: inline-block;
-    margin: 0 50px;
-}
 .products {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-.product{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    padding: 10px;
-    width: 200px;
-    height: 300px;
-    margin-bottom: 300px;
 }
 
-.descricao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-}
-
-.descricao .foto,
-.descricao p {
-    display: inline-block;
-    width: 300px;
-}
-
-.descricao #fotoCafe {
-    max-width: 248px;  /* Ajuste conforme necessário */
-    max-height: 248px; /* Ajuste conforme necessário */
-    min-width: 148px;  /* Ajuste conforme necessário */
-    min-height: 148px; /* Ajuste conforme necessário */
-}
-
-.produtosCafe{
+.product {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 500px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.productCafe {
+    text-align: center;
+    color: #f9eed7;
+    background-color: #8f4515;
+    height: 60px;
+    width: 300px;
+    border-radius: 20px 20px 0 0;
+    font-size:50px;
+    margin-bottom: 0;
+    position: relative;
+    bottom: 0px;
+
+}
+
+.infoCafe{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+    height: 500px;
+}
+
+.favorite {
+    display: flex;
+    flex-direction: row;
+}
+
+#favoritar-btn {
+    background: none;
+    border: none;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.favorite i {
+    color: darkred;
+    font-size: 40px;
+    background: none;
+}
+
+.favorite i:hover {
+    cursor: pointer;
+}
+
+#favoritado {
+    color: red;
+}
+
+.nomeCafe{
+    text-align: center;
+    color: #f9eed7;
+    background-color: #8f4515;
+    height: 60px;
+    width: 300px;
+    border-radius: 20px 20px 0 0;
+    font-size:50px;
+    margin-bottom: 0;
+    position: relative;
+    bottom: 0px;
+    left: 55px;
+}
+
+#fotoCafe {
+    max-width: 408px;  /* Ajuste conforme necessário */
+    max-height: 408px; /* Ajuste conforme necessário */
+    min-width: 148px;  /* Ajuste conforme necessário */
+    min-height: 148px; /* Ajuste conforme necessário */
+    border-radius: 30px;
+    margin-top: 0;
+}
+
+#cafeDescricao {
+    font-size: 25px;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+#cafeDescricaofoto {
+    border-radius: 20px;
+    width: 560px;
+    height: 200px;
+    object-fit: cover;
+}
+.caracteristicas{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.caracteristica{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-right: 2px solid #8f4515;
+}
+
+.caracteristica:last-child {
+    border-right: none; /* Adicione esta linha */
+}
+
+.caracteristica img {
+    text-align: center;
+    width: 250px;
+}
+
+.caracteristica h3 {
+    text-align: center;
+    color: #f9eed7;
+    background-color: #8f4515;
+    height: 50px;
+    width: 220px;
+    border-radius: 20px 20px 0 0;
+    font-size:35px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
 /* ///////////////// */

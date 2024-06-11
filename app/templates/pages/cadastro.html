@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include "pages/head.html" %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="{% static 'css/cadastro.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class='navbar'>
+        <form action="{% url 'home' %}" method="GET">{% csrf_token %}
+            <button id='seta'><img src="{% static 'fotos/voltar.png' %}" height="25px" ></button>
+        </form>
+        <img src="{% static 'fotos/logo_1.png' %}" height="50px" >
+        <div></div>
+    </div>
+
+    <div class='login-container'>
+        <div class='login-inside-container'>
+            <div class='login-buttons'>
+                <form action="{% url 'login' %}" method="GET">{% csrf_token %}
+                    <button id="login-btn">LOGIN</button>
+                </form>
+                <button id="cadastrar-btn">CADASTRAR</button>
+            </div>
+            <form action="{% url 'cadastro' %}" method="POST">{% csrf_token %}
+                <div class='login-fields'>
+                    <p>NOME DE USUÁRIO</p>
+                    <input type="text" class="cadastro-input" id="nome" name="name" required>
+                    <p>EMAIL</p>
+                    <input type="email" class="cadastro-input" id="email" name="email" required>
+                    <p>SENHA </p>
+                    <input type="password" class="cadastro-input" id="senha" name="senha" onkeydown="verificarEnter(event)" required>
+                    <input name ="cadastrar"type="submit" value="PROSSEGUIR" id="login">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
