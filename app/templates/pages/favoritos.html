@@ -6,44 +6,40 @@
     <link href="{% static 'css/favoritos.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div class="hamburger-menu">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-        </div>
-        <h1><a href="{% url 'home' %}">Easy Coffee</a></h1>
-        {% if check == 1 %}
-        <form action="{% url 'home' %}" method="POST">{% csrf_token %}
-            <button id="perfil">Sair de {{user}}</button>
+    <div class='navbar'>
+        <form action="{% url 'home' %}" method="GET">{% csrf_token %}
+            <a href="{% url 'home' %}">
+                <i class="fas fa-home icon-size"></i>
+                <i class="fas fa-user"></i>
+            </a>
         </form>
-        {% else %}
-        <form action="{% url 'login' %}" method="GET">{% csrf_token %}
-            <button id="perfil" >Login</button>
-        </form>
-        {% endif %}
-        <div id="nav-menu" class="nav-menu">
-            <a href="#">Acompanhamentos</a>
-            <a href="{% url 'recomendacao' %}">Recomendações</a>
-            <a href="{% url 'favoritos' %}">Favoritos</a>
-        </div>
+        <img src="{% static 'fotos/logo_1.png' %}" height="50px" >
+        <div></div>
     </div>
 
     <div class="products">
-        <br><br><br><br><br><br><br><br><br>
+        <!-- Para cada produto, adicione um bloco de produto aqui -->
+        <!-- Repita o bloco de produto para cada produto -->
         {% for cafe in cafes %}
         <div class="product">
-            <div class="produtosCafe">               
-                <h2 class="nomeCafe">{{ cafe.nome }}</h2>
-                <form action="{% url 'favoritos' %}" method="POST">
-                    {% csrf_token %}
-                    <button name="deletar" value="{{cafe.id_cafe}}"><img src="fotos/coração.png" alt="">Deletar</button>
-                </form>
-                <h3 class="descricaoTitle">Descrição</h3>
-                <div class="descricao">
-                    <div class="foto">
+            <div class="produtosCafe">      
+                <div class='infoCafe'>
+                    <div class='imageCafe'>
+                        <div class='favorite'>
+                            <h2 class="nomeCafe">{{ cafe.nome }}</h2>
+                            <form action="{% url 'favoritos' %}" method="POST">
+                                {% csrf_token %}
+                                <button id='favoritar-btn' name="deletar" value="{{cafe.id_cafe}}"><i id='favoritado' class="fas fa-solid fa-heart"></i></button>
+                            </form>
+                        </div>
                         <img id="fotoCafe" src="{{ cafe.foto.url }}" alt="Imagem do café">
                     </div>
-                    <p>{{ cafe.descricao }}</p>
+                    <div class='descricao'>
+                        <p id='cafeDescricao'>{{ cafe.descricao }}</p>
+                        <img id='cafeDescricaofoto'src="{% static 'fotos/recomendacoes.jpg' %}" height='70px'>
+                    </div>
                 </div>
+
                 <div class="caracteristicas">
                     <div class="caracteristica">
                         <h3>Tamanho <!-- tamanho do café --></h3>
@@ -57,6 +53,7 @@
                     </div>
                     <div class="caracteristica">
                         <h3>Intensidade <!-- intensidade do café --></h3>
+                        <br><br>
                         {% if cafe.intensidade == "1" %}
                         <img src="{% static 'fotos/intensidade/intensidade1.png'%}" alt="intensidade">
                         {% elif cafe.intensidade == "2" %}
@@ -79,6 +76,10 @@
                         <img src="{% static 'fotos/aroma/aroma5.png'%}" alt="aroma">
                         {% elif cafe.aroma == "6" %}
                         <img src="{% static 'fotos/aroma/aroma6.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "7" %}
+                        <img src="{% static 'fotos/aroma/aroma7.png'%}" alt="aroma">
+                        {% elif cafe.aroma == "8" %}
+                        <img src="{% static 'fotos/aroma/aroma8.png'%}" alt="aroma">
                         {% endif %}
                     </div>
                 </div>

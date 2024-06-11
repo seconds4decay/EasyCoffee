@@ -116,7 +116,7 @@ def produtos(request):
     if request.method == 'GET':
         cafes_favoritos = getfavoritos()
 
-        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos})
+        return render(request, 'pages/produtos.html', {'cafes':cafes, 'favoritos': cafes_favoritos,'check': 0})
     
     elif request.method == "POST":
         if 'openfilter' in request.POST:
