@@ -4,7 +4,7 @@ describe('Testes de Favoritar Sem Login', () => {
         cy.visit('/');
         cy.get('.square-main > :nth-child(1) > .square').click();
 
-        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fas').click();
+        cy.get(':nth-child(1) > .produtosCafe > .infoCafe > .imageCafe > .favorite > form > #favoritar-btn > .fa-regular').click();
 
         cy.get('.login-fields').should('be.visible');
         
