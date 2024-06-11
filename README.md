@@ -35,6 +35,8 @@ Issue/Bug Tracker: ![image](https://github.com/seconds4decay/EasyCoffee/assets/1
 -------
 ### SR 02:
 
+Diagrama de atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
+
 
 ## Equipe
 Ciência da Computação:
