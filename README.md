@@ -38,8 +38,8 @@ EasyCoffee é um website realizado utilizando o framework Django com o objetivo 
 Diagrama de Atividades: ![image](https://github.com/seconds4decay/EasyCoffee/assets/142419928/3d5a806e-9ee6-4452-8c52-1532a0cea9e9)
 
 Storyboard:
+![EasyCoffeeStoryBoardFinal](https://github.com/seconds4decay/EasyCoffee/assets/142418286/10fe6275-41e1-4115-8b45-0ec609a051b0)
 
-Issue/Bug Tracker:
 ## Equipe
 Ciência da Computação:
 - [Christian Barnard](https://github.com/ChrisDrakon) - cbpj@cesar.school 📩
